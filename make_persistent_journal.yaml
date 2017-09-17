@@ -1,0 +1,14 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: create directory  /var/log/journal
+      file:
+        path:  /var/log/journal
+        state: directory
+      notify:
+        - restart systemd-journald
+  handlers:
+    - name: restart systemd-journald
+      service:
+        name: systemd-journald
+        state: restarted

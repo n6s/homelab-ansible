@@ -1,0 +1,16 @@
+---
+  - hosts: nuc2
+    remote_user: roger
+    become: yes
+    tasks:
+      - name: Create user rundeck
+        user:
+            name: rundeck
+            shell: /bin/bash
+            comment: Rundeck
+
+      - name: Inject ssh authorized key
+        authorized_key:
+            user: rundeck
+            key: "{{ lookup('file', '/home/roger/ansible/files/rundeck.pub') }}"
+
