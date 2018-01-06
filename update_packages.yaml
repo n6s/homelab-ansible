@@ -1,0 +1,38 @@
+---
+- name: CentOS package upgrades
+  hosts: centos
+  become: yes
+  tasks:
+  - name: Upload upgrade script
+    copy:
+      src: files/upgrade-centos.sh
+      dest: /usr/local/sbin/upgrade-centos.sh
+      mode: 0755
+
+  - name: Run upgrade script
+    command: /usr/local/sbin/upgrade-centos.sh
+    register: result
+
+  - name: Show script output
+    debug:
+      var: result.stdout_lines
+
+
+- name: Ubuntu package upgrades
+  hosts: ubuntu
+  become: yes
+  tasks:
+  - name: Uploaded upgrade script
+    copy:
+      src: files/upgrade-ubuntu.sh
+      dest: /usr/local/sbin/upgrade-ubuntu.sh
+      mode: 0755
+
+  - name: Run upgrade script
+    command: /usr/local/sbin/upgrade-ubuntu.sh
+    register: result
+
+  - name: Show script output
+    debug:
+      var: result.stdout_lines
+
