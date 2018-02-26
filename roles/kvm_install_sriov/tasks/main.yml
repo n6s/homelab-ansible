@@ -1,5 +1,5 @@
 ---
-# Deploy kvm with bridged networking on target host
+# Deploy kvm with sr-iov networking on target host
 - name: Install packages
   yum:
     name: "{{ item }}"
