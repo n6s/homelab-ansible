@@ -1,0 +1,19 @@
+---
+- name: Add or remove zone files from DNS
+  hosts: kat
+  become: yes
+  gather_facts: no
+  vars_prompt:
+  - name: add_or_remove
+    prompt: "Do you want to [a]dd or [r]remove?"
+    default: "a"
+    private: no
+  - name: hostname
+    prompt: "Enter the short hostname"
+    private: no
+  - name: ip_host
+    prompt: "Enter the last octet of the IP"
+    private: no
+  roles:
+  - dns_zone_modify
+

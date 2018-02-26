@@ -1,0 +1,6 @@
+---
+nameserver_ip: "192.168.0.8"
+domain: "sfu.e-prepared.com"
+ip_network: "192.168.0"
+ip_reverse: "0.168.192"
+

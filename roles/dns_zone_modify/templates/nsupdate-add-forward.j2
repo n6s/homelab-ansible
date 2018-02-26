@@ -1,0 +1,4 @@
+server {{ nameserver_ip }}
+update add {{ hostname }}.{{ domain }}. 3600 IN A {{ ip_network }}.{{ ip_host }}
+send
+

@@ -1,0 +1,50 @@
+---
+- name: Create instruction files for nsupdate
+  template:
+    src: "{{ item }}.j2"
+    dest: "/tmp/{{ item }}"
+  with_items:
+  - nsupdate-add-forward
+  - nsupdate-add-reverse
+  - nsupdate-delete-forward
+  - nsupdate-delete-reverse
+
+- name: Add forward DNS entry
+  command: nsupdate -k /etc/rndc.key /tmp/nsupdate-add-forward
+  when: add_or_remove == "a"
+
+- name: Add reverse DNS zone entry
+  command: nsupdate -k /etc/rndc.key /tmp/nsupdate-add-reverse
+  when: add_or_remove == "a"
+
+- name: Remove forward DNS entry
+  command: nsupdate -k /etc/rndc.key /tmp/nsupdate-delete-forward
+  when: add_or_remove == "r"
+
+- name: Remove reverse DNS zone entry
+  command: nsupdate -k /etc/rndc.key /tmp/nsupdate-delete-reverse
+  when: add_or_remove == "r"
+
+- name: Test forward lookup
+  shell: "nslookup {{ hostname }}.{{ domain }} {{ nameserver_ip }} ; exit 0"
+  register: forward_lookup
+  delegate_to: localhost
+  changed_when: no
+
+- name: Test reverse lookup
+  shell: "nslookup {{ ip_network }}.{{ ip_host }} {{ nameserver_ip }} ; exit 0"
+  register: reverse_lookup
+  delegate_to: localhost
+  changed_when: no
+
+- name: Forward lookup
+  debug:
+    msg: "{{ forward_lookup.stdout_lines }}"
+
+- name: Reverse lookup
+  debug:
+    msg: "{{ reverse_lookup.stdout_lines }}"
+
+- name: rndc sync
+  command: rndc sync
+
