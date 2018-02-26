@@ -1,0 +1,8 @@
+---
+- name: Deploy kvm with SR-IOV networking on target host
+  hosts: kvm_hosts
+  become: yes
+  roles:
+  - kvm_install_sriov
+  - sriov_enable
+

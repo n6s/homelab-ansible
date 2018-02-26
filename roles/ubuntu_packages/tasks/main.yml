@@ -1,0 +1,9 @@
+---
+# tasks file for ubuntu_packages
+- name: install packages
+  apt:
+    name: "{{ item }}"
+  with_items:
+  - git
+  - vim
+

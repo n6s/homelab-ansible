@@ -1,0 +1,8 @@
+---
+- name: Configure SR-IOV for supported interfaces
+  hosts: kvm_hosts
+  become: yes
+  gather_facts: no
+  roles:
+  - sriov_enable
+

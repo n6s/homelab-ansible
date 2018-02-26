@@ -1,0 +1,55 @@
+---
+- name: Make the virtual functions persistent
+  template:
+    src: udev.rules
+    dest: /etc/udev/rules.d/{{ item }}.rules
+  with_items: "{{ sriov_devices }}"
+
+- name: Append intel_iommu=on to kernel
+  lineinfile:
+    state: present
+    dest: /etc/default/grub
+    backrefs: yes
+    regexp: '^(GRUB_CMDLINE_LINUX=(?!.*intel_iommu)\"[^\"]+)(\".*)'
+    line: '\1 intel_iommu=on\2'
+  notify: Regenerate GRUB configuration file
+
+- name: Append iommu=pt to kernel
+  lineinfile:
+    state: present
+    dest: /etc/default/grub
+    backrefs: yes
+    regexp: '^(GRUB_CMDLINE_LINUX=(?!.*[\s]+iommu)\"[^\"]+)(\".*)'
+    line: '\1 iommu=pt\2'
+  notify: Regenerate GRUB configuration file
+
+- name: Create network definition domain XML
+  template:
+    src: passthrough.xml
+    dest: /tmp/passthrough-{{ item }}.xml
+  with_items: "{{ sriov_devices }}"
+
+- name: Load the network XML definition
+  command: virsh net-define /tmp/passthrough-{{ item }}.xml
+  with_items: "{{ sriov_devices }}"
+  ignore_errors: yes
+
+- name: Autostart the new network on boot
+  command: virsh net-autostart passthrough-{{ item }}
+  with_items: "{{ sriov_devices }}"
+  ignore_errors: yes
+
+- name: Activate the new network
+  command: virsh net-start passthrough-{{ item }}
+  with_items: "{{ sriov_devices }}"
+  ignore_errors: yes
+
+- name: Add NM_CONTROLLED=no to ifcfg-* files
+  shell: for IF in /etc/sysconfig/network-scripts/ifcfg-e* ; do echo $i ; sed -i '/NM_CONTROLLED/d' $IF ; echo 'NM_CONTROLLED=no' >> $IF ; done
+
+- name: Stop and disable NetworkManager
+  service:
+    name: NetworkManager
+    state: stopped
+    enabled: no
+

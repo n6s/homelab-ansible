@@ -1,0 +1,8 @@
+---
+- name: create directory /var/log/journal
+  file:
+    path:  /var/log/journal
+    state: directory
+  notify:
+    - restart systemd-journald
+

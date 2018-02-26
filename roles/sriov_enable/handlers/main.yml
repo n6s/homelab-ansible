@@ -1,0 +1,4 @@
+---
+- name: Regenerate GRUB configuration file
+  command: grub2-mkconfig -o /etc/grub2.cfg
+

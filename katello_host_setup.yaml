@@ -1,0 +1,13 @@
+---
+- name: Install katello-agent and cutover to Katello repos
+  hosts: all
+  tasks:
+  - group_by: key=os_{{ ansible_distribution }}
+
+- hosts: os_CentOS
+  gather_facts: no
+  become: yes
+  serial: 1
+  roles:
+  - katello-host-setup
+

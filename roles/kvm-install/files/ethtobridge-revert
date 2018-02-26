@@ -1,0 +1,5 @@
+#!/bin/bash
+cd /etc/sysconfig/network-scripts/
+mv -f old-ifcfg-enp1s0f0 ifcfg-enp1s0f0
+rm -f ifcfg-br0
+

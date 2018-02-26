@@ -1,0 +1,5 @@
+---
+katello_remote_rpm: http://kat.sfu.e-prepared.com/pub/katello-ca-consumer-latest.noarch.rpm
+activation_key: centos7-epel7-katelloclient
+org_id: E-Prepared
+

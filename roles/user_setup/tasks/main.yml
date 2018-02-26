@@ -1,0 +1,36 @@
+---
+- name: Create user roger
+  user:
+    name: roger
+    shell: /bin/bash
+    groups: '{{ admin_group }}'
+    append: yes
+    comment: Roger Brown
+    password: $6$5.eeDjik$due6R3v07KXLLvCff4gg38Cezo0nSd7gIzugmxpJ/A3qqlxjaBMb0g2oYFE7Hy0KL4bw2LgI54YIYwwWYT/8a.
+    update_password: on_create
+
+- name: Inject ssh authorized key
+  authorized_key:
+    user: roger
+    key: "{{ lookup('file', '/home/roger/.ssh/id_rsa.pub') }}"
+
+- name: Create /home/roger/.vimrc with 'set bg=dark'
+  copy:
+    dest: /home/roger/.vimrc
+    force: no
+    src: /home/roger/.vimrc
+    owner: roger
+    group: roger
+
+- name: Create /root/.vimrc with 'set bg=dark'
+  copy:
+    dest: /root/.vimrc
+    force: no
+    src: /home/roger/.vimrc
+
+- name: Copy a new sudoers file into place, after passing validation with visudo
+  copy:
+    src: files/sudoers
+    dest: /etc/sudoers.d/80-roger
+    validate: 'visudo -cf %s'
+

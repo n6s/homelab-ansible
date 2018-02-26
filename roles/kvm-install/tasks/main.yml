@@ -1,0 +1,61 @@
+---
+# Deploy kvm with bridged networking on target host
+- name: Install packages
+  yum:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+  - qemu-kvm
+  - libvirt
+  - libvirt-client
+
+- name: Enable/start libvirtd service
+  service:
+    name: libvirtd
+    enabled: yes
+    state: started
+
+- name: Upload ethtobridge script
+  copy:
+    src: files/ethtobridge
+    dest: /etc/sysconfig/network-scripts/ethtobridge
+    mode: 0755
+
+- name: Upload ethtobridge revert script
+  copy:
+    src: files/ethtobridge-revert
+    dest: /etc/sysconfig/network-scripts/ethtobridge-revert
+    mode: 0755
+
+- name: Convert ethernet to bridge
+  command: /usr/local/sbin/ethtobridge
+  args:
+    creates: /etc/sysconfig/network-scripts/ifcfg-br0
+
+- name: touch /etc/cloud/cloud-init.disabled
+  copy:
+    content: ""
+    dest: /etc/cloud/cloud-init.disabled
+
+- name: Create cloud-init networking override script
+  copy:
+    src: files/95-disable-network-config.cfg
+    dest: /etc/cloud/cloud.cfg.d/95-disable-network-config.cfg
+
+- name: Add policy to allow users with wheel group to manage libvirt
+  copy:
+    src: files/49-org.libvirt.unix.manager.rules
+    dest: /etc/polkit-1/rules.d/49-org.libvirt.unix.manager.rules
+
+- name: Replace ~/.bash_profile for non-root virsh management
+  copy:
+    src: files/bash_profile
+    dest: '{{ user_home }}/.bash_profile'
+    owner: '{{ username }}'
+    group: '{{ username }}'
+    mode: 0644
+
+- name: Restart system
+  debug:
+    msg: Next, restart system
+

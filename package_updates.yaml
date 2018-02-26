@@ -1,0 +1,16 @@
+---
+- hosts: all
+  tasks:
+  - group_by: key=os_{{ ansible_distribution }}
+
+- hosts: os_CentOS
+  serial: 1
+  become: yes
+  roles:
+  - yum_updates
+
+- hosts: os_Ubuntu
+  become: yes
+  roles:
+  - ubuntu_updates
+

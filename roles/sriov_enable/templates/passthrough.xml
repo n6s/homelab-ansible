@@ -1,0 +1,7 @@
+<network>
+   <name>passthrough-{{ item }}</name>
+   <forward mode='hostdev' managed='yes'>
+     <pf dev='{{ item }}'/>
+   </forward>
+</network>
+

@@ -1,0 +1,14 @@
+---
+- name: Upgrade yum packages
+  yum:
+    name: '*'
+    state: latest
+
+- name: Test whether reboot required
+  shell: needs-restarting -r ; exit 0
+  register: result
+
+- name: Show whether reboot required
+  debug:
+    var: result.stdout_lines
+

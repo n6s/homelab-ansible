@@ -1,0 +1,6 @@
+---
+- import_playbook: user_setup.yaml
+- import_playbook: katello_host_setup.yaml
+- import_playbook: package_install.yaml
+- import_playbook: package_updates.yaml
+

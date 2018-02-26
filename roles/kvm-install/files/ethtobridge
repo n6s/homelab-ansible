@@ -1,0 +1,32 @@
+#!/bin/bash
+# convert to bridged networking
+
+# change working directory
+cd /etc/sysconfig/network-scripts/
+
+# Determine primary network interface from default route
+ETH=$(grep -l DEFROUTE ifcfg-*)
+
+# Replacement bridge interface
+BR=ifcfg-br0
+
+# Make backup of primary network interface
+mv $ETH old-$ETH
+
+# Generate new bridge from old primary, with some substitutions
+sed 's/DEVICE=.*$/DEVICE=br0/; s/Ethernet/Bridge/; /HWADDR/d; /cloud-init/d' old-$ETH > $BR
+
+# Append delay=0 to bridge
+cat >> $BR << EOF
+DELAY=0
+EOF
+
+# Make new ethernet interface as bridge slave
+cat > $ETH << EOF
+ONBOOT=yes
+BRIDGE=br0
+EOF
+
+# Populate new ethernet interface with selected old settings
+egrep 'DEVICE|HWADDR' old-$ETH >> $ETH
+

@@ -1,0 +1,34 @@
+---
+# Deploy kvm with bridged networking on target host
+- name: Install packages
+  yum:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+  - qemu-kvm
+  - libvirt
+  - libvirt-client
+
+- name: Enable/start libvirtd service
+  service:
+    name: libvirtd
+    enabled: yes
+    state: started
+
+- name: Add policy to allow users with wheel group to manage libvirt
+  copy:
+    src: files/49-org.libvirt.unix.manager.rules
+    dest: /etc/polkit-1/rules.d/49-org.libvirt.unix.manager.rules
+
+- name: Replace ~/.bash_profile for non-root virsh management
+  copy:
+    src: files/bash_profile
+    dest: '{{ user_home }}/.bash_profile'
+    owner: '{{ username }}'
+    group: '{{ username }}'
+    mode: 0644
+
+- name: Restart system
+  debug:
+    msg: Next, restart system
+

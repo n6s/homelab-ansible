@@ -1,0 +1,5 @@
+---
+# defaults file for kvm-install
+username: roger
+user_home: /home/{{ username }}
+

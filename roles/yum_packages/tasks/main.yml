@@ -1,0 +1,11 @@
+---
+- name: install packages
+  yum: name={{item}} state=latest
+  with_items:
+  - yum-utils 
+  - vim-enhanced
+  - htop
+  - lshw
+  - tree
+  - setroubleshoot-server
+
