@@ -1,0 +1,11 @@
+---
+- name: touch /etc/cloud/cloud-init.disabled
+  copy:
+    content: ""
+    dest: /etc/cloud/cloud-init.disabled
+
+- name: Create cloud-init networking override script
+  copy:
+    src: 95-disable-network-config.cfg
+    dest: /etc/cloud/cloud.cfg.d/95-disable-network-config.cfg
+

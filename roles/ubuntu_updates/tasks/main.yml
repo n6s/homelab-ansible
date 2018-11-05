@@ -8,15 +8,3 @@
   apt:
     autoremove: yes
 
-- name: Test whether reboot required
-  stat:
-    path: /var/run/reboot-required
-  register: reboot_required_file
-
-- name: Show whether reboot required
-  debug:
-    msg: Reboot is required
-  when: reboot_required_file.stat.exists
-  #when: "'reboot_required_file' in hostvars[item] and hostvars[item]['reboot_required_file'].stat.exists"
-  #with_items: "{{ play_hosts }}"
-

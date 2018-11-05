@@ -14,3 +14,13 @@
   roles:
   - ubuntu_updates
 
+- hosts: os_CentOS
+  become: yes
+  roles:
+  - centos_needs_restarting
+
+- hosts: os_Ubuntu
+  become: yes
+  roles:
+  - ubuntu_reboot_required
+

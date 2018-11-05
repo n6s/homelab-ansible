@@ -1,0 +1,8 @@
+---
+- name: Disable cloud-init
+  hosts: ubuntu
+  become: yes
+  gather_facts: no
+  roles:
+  - cloudinit_disable
+

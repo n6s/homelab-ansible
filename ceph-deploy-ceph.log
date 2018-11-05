@@ -1,0 +1,1642 @@
+[2018-09-26 20:29:18,288][ceph_deploy.conf][DEBUG ] found configuration file at: /home/roger/.cephdeploy.conf
+[2018-09-26 20:29:18,288][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy install laptop
+[2018-09-26 20:29:18,288][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2018-09-26 20:29:18,288][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2018-09-26 20:29:18,288][ceph_deploy.cli][INFO  ]  testing                       : None
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7f5fa4f89f80>
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  dev_commit                    : None
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  install_mds                   : False
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  stable                        : None
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  default_release               : False
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  username                      : None
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  adjust_repos                  : True
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  func                          : <function install at 0x7f5fa54471b8>
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  install_mgr                   : False
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  install_all                   : False
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  repo                          : False
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  host                          : ['laptop']
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  install_rgw                   : False
+[2018-09-26 20:29:18,289][ceph_deploy.cli][INFO  ]  install_tests                 : False
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  repo_url                      : None
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  install_osd                   : False
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  version_kind                  : stable
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  install_common                : False
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  dev                           : master
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  nogpgcheck                    : False
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  local_mirror                  : None
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  release                       : None
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  install_mon                   : False
+[2018-09-26 20:29:18,290][ceph_deploy.cli][INFO  ]  gpg_url                       : None
+[2018-09-26 20:29:18,290][ceph_deploy.install][DEBUG ] Installing stable version mimic on cluster ceph hosts laptop
+[2018-09-26 20:29:18,290][ceph_deploy.install][DEBUG ] Detecting platform for host laptop ...
+[2018-09-26 20:29:18,695][laptop][DEBUG ] connection detected need for sudo
+[2018-09-26 20:29:19,100][laptop][DEBUG ] connected to host: laptop 
+[2018-09-26 20:29:19,102][laptop][DEBUG ] detect platform information from remote host
+[2018-09-26 20:29:19,137][laptop][DEBUG ] detect machine type
+[2018-09-26 20:29:19,152][ceph_deploy.install][INFO  ] Distro info: Ubuntu 16.04 xenial
+[2018-09-26 20:29:19,152][laptop][INFO  ] installing Ceph on laptop
+[2018-09-26 20:29:19,156][laptop][INFO  ] Running command: sudo env DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get --assume-yes -q update
+[2018-09-26 20:29:19,632][laptop][DEBUG ] Hit:1 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+[2018-09-26 20:29:19,633][laptop][DEBUG ] Ign:2 http://dl.google.com/linux/chrome/deb stable InRelease
+[2018-09-26 20:29:19,696][laptop][DEBUG ] Get:3 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease [109 kB]
+[2018-09-26 20:29:19,697][laptop][DEBUG ] Get:4 http://dl.google.com/linux/chrome/deb stable Release [1,189 B]
+[2018-09-26 20:29:19,760][laptop][DEBUG ] Ign:5 http://linux.dropbox.com/ubuntu xenial InRelease
+[2018-09-26 20:29:19,761][laptop][DEBUG ] Get:6 http://dl.google.com/linux/chrome/deb stable Release.gpg [819 B]
+[2018-09-26 20:29:19,794][laptop][DEBUG ] Get:7 http://linux.dropbox.com/ubuntu xenial Release [6,600 B]
+[2018-09-26 20:29:20,058][laptop][DEBUG ] Get:8 http://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1,386 B]
+[2018-09-26 20:29:20,058][laptop][DEBUG ] Hit:9 https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial InRelease
+[2018-09-26 20:29:20,172][laptop][DEBUG ] Get:11 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease [107 kB]
+[2018-09-26 20:29:20,286][laptop][DEBUG ] Get:12 http://security.ubuntu.com/ubuntu xenial-security InRelease [107 kB]
+[2018-09-26 20:29:20,400][laptop][DEBUG ] Hit:13 https://download.ceph.com/debian-luminous xenial InRelease
+[2018-09-26 20:29:20,432][laptop][DEBUG ] Get:14 http://us.archive.ubuntu.com/ubuntu xenial-updates/main amd64 DEP-11 Metadata [320 kB]
+[2018-09-26 20:29:20,846][laptop][DEBUG ] Get:15 http://us.archive.ubuntu.com/ubuntu xenial-updates/main DEP-11 64x64 Icons [227 kB]
+[2018-09-26 20:29:21,060][laptop][DEBUG ] Get:16 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe amd64 DEP-11 Metadata [247 kB]
+[2018-09-26 20:29:21,092][laptop][DEBUG ] Get:17 http://us.archive.ubuntu.com/ubuntu xenial-updates/universe DEP-11 64x64 Icons [333 kB]
+[2018-09-26 20:29:21,356][laptop][DEBUG ] Get:18 http://us.archive.ubuntu.com/ubuntu xenial-updates/multiverse amd64 DEP-11 Metadata [5,968 B]
+[2018-09-26 20:29:21,357][laptop][DEBUG ] Get:19 http://security.ubuntu.com/ubuntu xenial-security/main amd64 DEP-11 Metadata [67.8 kB]
+[2018-09-26 20:29:21,388][laptop][DEBUG ] Get:20 http://us.archive.ubuntu.com/ubuntu xenial-backports/main amd64 DEP-11 Metadata [3,328 B]
+[2018-09-26 20:29:21,388][laptop][DEBUG ] Get:21 http://us.archive.ubuntu.com/ubuntu xenial-backports/universe amd64 DEP-11 Metadata [5,104 B]
+[2018-09-26 20:29:21,653][laptop][DEBUG ] Get:22 http://security.ubuntu.com/ubuntu xenial-security/main DEP-11 64x64 Icons [68.0 kB]
+[2018-09-26 20:29:21,716][laptop][DEBUG ] Get:23 http://security.ubuntu.com/ubuntu xenial-security/universe amd64 DEP-11 Metadata [108 kB]
+[2018-09-26 20:29:21,880][laptop][DEBUG ] Get:24 http://security.ubuntu.com/ubuntu xenial-security/universe DEP-11 64x64 Icons [150 kB]
+[2018-09-26 20:29:21,994][laptop][DEBUG ] Hit:25 http://ppa.launchpad.net/deja-dup-team/testing/ubuntu xenial InRelease
+[2018-09-26 20:29:22,359][laptop][DEBUG ] Hit:26 http://ppa.launchpad.net/linrunner/tlp/ubuntu xenial InRelease
+[2018-09-26 20:29:29,235][laptop][DEBUG ] Fetched 1,867 kB in 3s (577 kB/s)
+[2018-09-26 20:29:31,202][laptop][DEBUG ] Reading package lists...
+[2018-09-26 20:29:31,269][laptop][INFO  ] Running command: sudo env DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get --assume-yes -q --no-install-recommends install ca-certificates apt-transport-https
+[2018-09-26 20:29:31,389][laptop][DEBUG ] Reading package lists...
+[2018-09-26 20:29:31,704][laptop][DEBUG ] Building dependency tree...
+[2018-09-26 20:29:31,704][laptop][DEBUG ] Reading state information...
+[2018-09-26 20:29:31,968][laptop][DEBUG ] apt-transport-https is already the newest version (1.2.27).
+[2018-09-26 20:29:31,968][laptop][DEBUG ] ca-certificates is already the newest version (20170717~16.04.1).
+[2018-09-26 20:29:31,969][laptop][DEBUG ] 0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+[2018-09-26 20:29:31,985][laptop][INFO  ] Running command: sudo wget -O release.asc https://download.ceph.com/keys/release.asc
+[2018-09-26 20:29:32,055][laptop][WARNING] --2018-09-26 20:29:32--  https://download.ceph.com/keys/release.asc
+[2018-09-26 20:29:32,055][laptop][WARNING] Resolving download.ceph.com (download.ceph.com)... 158.69.68.124, 2607:5300:201:2000::3:58a1
+[2018-09-26 20:29:32,169][laptop][WARNING] Connecting to download.ceph.com (download.ceph.com)|158.69.68.124|:443... connected.
+[2018-09-26 20:29:32,484][laptop][WARNING] HTTP request sent, awaiting response... 200 OK
+[2018-09-26 20:29:32,484][laptop][WARNING] Length: 1645 (1.6K) [application/octet-stream]
+[2018-09-26 20:29:32,484][laptop][WARNING] Saving to: ‘release.asc’
+[2018-09-26 20:29:32,484][laptop][WARNING] 
+[2018-09-26 20:29:32,484][laptop][WARNING]      0K .                                                     100%  120M=0s
+[2018-09-26 20:29:32,484][laptop][WARNING] 
+[2018-09-26 20:29:32,485][laptop][WARNING] 2018-09-26 20:29:32 (120 MB/s) - ‘release.asc’ saved [1645/1645]
+[2018-09-26 20:29:32,485][laptop][WARNING] 
+[2018-09-26 20:29:32,489][laptop][INFO  ] Running command: sudo apt-key add release.asc
+[2018-09-26 20:29:33,261][laptop][DEBUG ] OK
+[2018-09-26 20:29:33,264][laptop][DEBUG ] add deb repo to /etc/apt/sources.list.d/
+[2018-09-26 20:29:33,269][laptop][INFO  ] Running command: sudo env DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get --assume-yes -q update
+[2018-09-26 20:29:33,488][laptop][DEBUG ] Ign:1 http://linux.dropbox.com/ubuntu xenial InRelease
+[2018-09-26 20:29:33,519][laptop][DEBUG ] Ign:2 http://dl.google.com/linux/chrome/deb stable InRelease
+[2018-09-26 20:29:33,520][laptop][DEBUG ] Get:3 http://linux.dropbox.com/ubuntu xenial Release [6,600 B]
+[2018-09-26 20:29:33,634][laptop][DEBUG ] Hit:4 http://us.archive.ubuntu.com/ubuntu xenial InRelease
+[2018-09-26 20:29:33,634][laptop][DEBUG ] Hit:5 http://dl.google.com/linux/chrome/deb stable Release
+[2018-09-26 20:29:33,748][laptop][DEBUG ] Hit:7 http://us.archive.ubuntu.com/ubuntu xenial-updates InRelease
+[2018-09-26 20:29:33,755][laptop][DEBUG ] Hit:8 http://ppa.launchpad.net/deja-dup-team/testing/ubuntu xenial InRelease
+[2018-09-26 20:29:33,819][laptop][DEBUG ] Hit:9 http://us.archive.ubuntu.com/ubuntu xenial-backports InRelease
+[2018-09-26 20:29:34,083][laptop][DEBUG ] Hit:10 https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial InRelease
+[2018-09-26 20:29:34,099][laptop][DEBUG ] Get:12 https://download.ceph.com/debian-mimic xenial InRelease [8,528 B]
+[2018-09-26 20:29:34,102][laptop][DEBUG ] Hit:13 http://ppa.launchpad.net/linrunner/tlp/ubuntu xenial InRelease
+[2018-09-26 20:29:34,216][laptop][DEBUG ] Hit:14 http://security.ubuntu.com/ubuntu xenial-security InRelease
+[2018-09-26 20:29:35,182][laptop][DEBUG ] Get:15 https://download.ceph.com/debian-mimic xenial/main amd64 Packages [13.9 kB]
+[2018-09-26 20:29:35,296][laptop][DEBUG ] Get:16 https://download.ceph.com/debian-mimic xenial/main i386 Packages [782 B]
+[2018-09-26 20:29:35,610][laptop][DEBUG ] Fetched 29.8 kB in 2s (14.8 kB/s)
+[2018-09-26 20:29:37,577][laptop][DEBUG ] Reading package lists...
+[2018-09-26 20:29:37,624][laptop][INFO  ] Running command: sudo env DEBIAN_FRONTEND=noninteractive DEBIAN_PRIORITY=critical apt-get --assume-yes -q --no-install-recommends install -o Dpkg::Options::=--force-confnew ceph ceph-osd ceph-mds ceph-mon radosgw
+[2018-09-26 20:29:37,741][laptop][DEBUG ] Reading package lists...
+[2018-09-26 20:29:38,056][laptop][DEBUG ] Building dependency tree...
+[2018-09-26 20:29:38,056][laptop][DEBUG ] Reading state information...
+[2018-09-26 20:29:38,320][laptop][DEBUG ] The following packages were automatically installed and are no longer required:
+[2018-09-26 20:29:38,320][laptop][DEBUG ]   python-flask python-itsdangerous
+[2018-09-26 20:29:38,320][laptop][DEBUG ] Use 'sudo apt autoremove' to remove them.
+[2018-09-26 20:29:38,321][laptop][DEBUG ] The following additional packages will be installed:
+[2018-09-26 20:29:38,321][laptop][DEBUG ]   ceph-base ceph-common ceph-mgr libcephfs2 liboath0 librados2
+[2018-09-26 20:29:38,321][laptop][DEBUG ]   libradosstriper1 librbd1 librgw2 python-bcrypt python-cephfs python-rados
+[2018-09-26 20:29:38,321][laptop][DEBUG ]   python-rbd python-rgw
+[2018-09-26 20:29:38,321][laptop][DEBUG ] Suggested packages:
+[2018-09-26 20:29:38,322][laptop][DEBUG ]   python-influxdb
+[2018-09-26 20:29:38,322][laptop][DEBUG ] Recommended packages:
+[2018-09-26 20:29:38,322][laptop][DEBUG ]   btrfs-tools ntp | time-daemon ceph-fuse
+[2018-09-26 20:29:38,322][laptop][DEBUG ] The following NEW packages will be installed:
+[2018-09-26 20:29:38,322][laptop][DEBUG ]   liboath0 python-bcrypt
+[2018-09-26 20:29:38,322][laptop][DEBUG ] The following packages will be upgraded:
+[2018-09-26 20:29:38,323][laptop][DEBUG ]   ceph ceph-base ceph-common ceph-mds ceph-mgr ceph-mon ceph-osd libcephfs2
+[2018-09-26 20:29:38,323][laptop][DEBUG ]   librados2 libradosstriper1 librbd1 librgw2 python-cephfs python-rados
+[2018-09-26 20:29:38,323][laptop][DEBUG ]   python-rbd python-rgw radosgw
+[2018-09-26 20:29:38,637][laptop][DEBUG ] 17 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+[2018-09-26 20:29:38,637][laptop][DEBUG ] Need to get 49.5 MB of archives.
+[2018-09-26 20:29:38,638][laptop][DEBUG ] After this operation, 23.4 MB of additional disk space will be used.
+[2018-09-26 20:29:38,638][laptop][DEBUG ] Get:1 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 python-bcrypt amd64 2.0.0-2build1 [18.3 kB]
+[2018-09-26 20:29:38,852][laptop][DEBUG ] Get:2 http://us.archive.ubuntu.com/ubuntu xenial/universe amd64 liboath0 amd64 2.6.1-1 [44.7 kB]
+[2018-09-26 20:29:39,216][laptop][DEBUG ] Get:3 https://download.ceph.com/debian-mimic xenial/main amd64 libradosstriper1 amd64 13.2.2-1xenial [316 kB]
+[2018-09-26 20:29:39,681][laptop][DEBUG ] Get:4 https://download.ceph.com/debian-mimic xenial/main amd64 radosgw amd64 13.2.2-1xenial [2,958 kB]
+[2018-09-26 20:29:41,447][laptop][DEBUG ] Get:5 https://download.ceph.com/debian-mimic xenial/main amd64 ceph-mgr amd64 13.2.2-1xenial [2,606 kB]
+[2018-09-26 20:29:43,064][laptop][DEBUG ] Get:6 https://download.ceph.com/debian-mimic xenial/main amd64 ceph-mon amd64 13.2.2-1xenial [2,937 kB]
+[2018-09-26 20:29:45,432][laptop][DEBUG ] Get:7 https://download.ceph.com/debian-mimic xenial/main amd64 ceph-mds amd64 13.2.2-1xenial [1,592 kB]
+[2018-09-26 20:29:47,149][laptop][DEBUG ] Get:8 https://download.ceph.com/debian-mimic xenial/main amd64 ceph amd64 13.2.2-1xenial [3,666 B]
+[2018-09-26 20:29:47,263][laptop][DEBUG ] Get:9 https://download.ceph.com/debian-mimic xenial/main amd64 ceph-osd amd64 13.2.2-1xenial [13.4 MB]
+[2018-09-26 20:30:00,651][laptop][DEBUG ] Get:10 https://download.ceph.com/debian-mimic xenial/main amd64 ceph-base amd64 13.2.2-1xenial [6,791 kB]
+[2018-09-26 20:30:06,275][laptop][DEBUG ] Get:11 https://download.ceph.com/debian-mimic xenial/main amd64 ceph-common amd64 13.2.2-1xenial [12.1 MB]
+[2018-09-26 20:30:16,807][laptop][DEBUG ] Get:12 https://download.ceph.com/debian-mimic xenial/main amd64 python-rados amd64 13.2.2-1xenial [218 kB]
+[2018-09-26 20:30:17,171][laptop][DEBUG ] Get:13 https://download.ceph.com/debian-mimic xenial/main amd64 librbd1 amd64 13.2.2-1xenial [1,084 kB]
+[2018-09-26 20:30:18,492][laptop][DEBUG ] Get:14 https://download.ceph.com/debian-mimic xenial/main amd64 librgw2 amd64 13.2.2-1xenial [1,862 kB]
+[2018-09-26 20:30:20,610][laptop][DEBUG ] Get:15 https://download.ceph.com/debian-mimic xenial/main amd64 librados2 amd64 13.2.2-1xenial [2,836 kB]
+[2018-09-26 20:30:23,379][laptop][DEBUG ] Get:16 https://download.ceph.com/debian-mimic xenial/main amd64 python-cephfs amd64 13.2.2-1xenial [76.4 kB]
+[2018-09-26 20:30:23,493][laptop][DEBUG ] Get:17 https://download.ceph.com/debian-mimic xenial/main amd64 libcephfs2 amd64 13.2.2-1xenial [394 kB]
+[2018-09-26 20:30:24,007][laptop][DEBUG ] Get:18 https://download.ceph.com/debian-mimic xenial/main amd64 python-rbd amd64 13.2.2-1xenial [141 kB]
+[2018-09-26 20:30:24,272][laptop][DEBUG ] Get:19 https://download.ceph.com/debian-mimic xenial/main amd64 python-rgw amd64 13.2.2-1xenial [79.2 kB]
+[2018-09-26 20:30:24,736][laptop][DEBUG ] Fetched 49.5 MB in 45s (1,079 kB/s)
+[2018-09-26 20:30:25,050][laptop][DEBUG ] (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 287738 files and directories currently installed.)
+[2018-09-26 20:30:25,054][laptop][DEBUG ] Preparing to unpack .../libradosstriper1_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:25,318][laptop][DEBUG ] Unpacking libradosstriper1 (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:25,933][laptop][DEBUG ] Preparing to unpack .../radosgw_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:26,047][laptop][DEBUG ] Unpacking radosgw (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:27,513][laptop][DEBUG ] Preparing to unpack .../ceph-mgr_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:27,677][laptop][DEBUG ] Unpacking ceph-mgr (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:28,943][laptop][DEBUG ] Preparing to unpack .../ceph-mon_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:29,057][laptop][DEBUG ] Unpacking ceph-mon (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:30,173][laptop][DEBUG ] Preparing to unpack .../ceph-mds_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:30,337][laptop][DEBUG ] Unpacking ceph-mds (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:31,102][laptop][DEBUG ] Preparing to unpack .../ceph_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:31,216][laptop][DEBUG ] Unpacking ceph (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:31,781][laptop][DEBUG ] Preparing to unpack .../ceph-osd_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:32,146][laptop][DEBUG ] Unpacking ceph-osd (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:34,814][laptop][DEBUG ] Preparing to unpack .../ceph-base_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:35,129][laptop][DEBUG ] Unpacking ceph-base (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:37,647][laptop][DEBUG ] Preparing to unpack .../ceph-common_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:37,961][laptop][DEBUG ] Unpacking ceph-common (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:40,029][laptop][DEBUG ] Preparing to unpack .../python-rados_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:40,143][laptop][DEBUG ] Unpacking python-rados (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:40,808][laptop][DEBUG ] Preparing to unpack .../librbd1_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:40,922][laptop][DEBUG ] Unpacking librbd1 (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:41,487][laptop][DEBUG ] Preparing to unpack .../librgw2_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:41,601][laptop][DEBUG ] Unpacking librgw2 (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:42,316][laptop][DEBUG ] Preparing to unpack .../librados2_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:42,430][laptop][DEBUG ] Unpacking librados2 (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:43,296][laptop][DEBUG ] Selecting previously unselected package python-bcrypt.
+[2018-09-26 20:30:43,311][laptop][DEBUG ] Preparing to unpack .../python-bcrypt_2.0.0-2build1_amd64.deb ...
+[2018-09-26 20:30:43,375][laptop][DEBUG ] Unpacking python-bcrypt (2.0.0-2build1) ...
+[2018-09-26 20:30:43,790][laptop][DEBUG ] Preparing to unpack .../python-cephfs_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:44,054][laptop][DEBUG ] Unpacking python-cephfs (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:44,469][laptop][DEBUG ] Preparing to unpack .../libcephfs2_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:44,583][laptop][DEBUG ] Unpacking libcephfs2 (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:44,997][laptop][DEBUG ] Preparing to unpack .../python-rbd_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:45,161][laptop][DEBUG ] Unpacking python-rbd (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:45,526][laptop][DEBUG ] Preparing to unpack .../python-rgw_13.2.2-1xenial_amd64.deb ...
+[2018-09-26 20:30:45,640][laptop][DEBUG ] Unpacking python-rgw (13.2.2-1xenial) over (12.2.8-1xenial) ...
+[2018-09-26 20:30:46,155][laptop][DEBUG ] Selecting previously unselected package liboath0.
+[2018-09-26 20:30:46,155][laptop][DEBUG ] Preparing to unpack .../liboath0_2.6.1-1_amd64.deb ...
+[2018-09-26 20:30:46,219][laptop][DEBUG ] Unpacking liboath0 (2.6.1-1) ...
+[2018-09-26 20:30:46,583][laptop][DEBUG ] Processing triggers for libc-bin (2.23-0ubuntu10) ...
+[2018-09-26 20:30:46,847][laptop][DEBUG ] Processing triggers for ureadahead (0.100.0-19) ...
+[2018-09-26 20:30:46,879][laptop][DEBUG ] ureadahead will be reprofiled on next reboot
+[2018-09-26 20:30:47,244][laptop][DEBUG ] Processing triggers for systemd (229-4ubuntu21.4) ...
+[2018-09-26 20:30:47,508][laptop][DEBUG ] Processing triggers for man-db (2.7.5-1) ...
+[2018-09-26 20:30:48,624][laptop][DEBUG ] Setting up librados2 (13.2.2-1xenial) ...
+[2018-09-26 20:30:48,788][laptop][DEBUG ] Setting up libradosstriper1 (13.2.2-1xenial) ...
+[2018-09-26 20:30:48,952][laptop][DEBUG ] Setting up librbd1 (13.2.2-1xenial) ...
+[2018-09-26 20:30:49,066][laptop][DEBUG ] Setting up libcephfs2 (13.2.2-1xenial) ...
+[2018-09-26 20:30:49,180][laptop][DEBUG ] Setting up python-cephfs (13.2.2-1xenial) ...
+[2018-09-26 20:30:49,494][laptop][DEBUG ] Setting up python-rados (13.2.2-1xenial) ...
+[2018-09-26 20:30:49,608][laptop][DEBUG ] Setting up python-rbd (13.2.2-1xenial) ...
+[2018-09-26 20:30:49,772][laptop][DEBUG ] Setting up librgw2 (13.2.2-1xenial) ...
+[2018-09-26 20:30:49,886][laptop][DEBUG ] Setting up python-rgw (13.2.2-1xenial) ...
+[2018-09-26 20:30:50,000][laptop][DEBUG ] Setting up liboath0 (2.6.1-1) ...
+[2018-09-26 20:30:50,214][laptop][DEBUG ] Setting up ceph-common (13.2.2-1xenial) ...
+[2018-09-26 20:30:50,328][laptop][DEBUG ] Installing new version of config file /etc/bash_completion.d/rados ...
+[2018-09-26 20:30:50,642][laptop][DEBUG ] Installing new version of config file /etc/logrotate.d/ceph-common ...
+[2018-09-26 20:30:50,806][laptop][DEBUG ] Setting system user ceph properties..usermod: no changes
+[2018-09-26 20:30:50,971][laptop][DEBUG ] ..done
+[2018-09-26 20:30:50,978][laptop][DEBUG ] Fixing /var/run/ceph ownership....done
+[2018-09-26 20:30:50,982][laptop][DEBUG ] [/usr/lib/tmpfiles.d/var.conf:14] Duplicate line for path "/var/log", ignoring.
+[2018-09-26 20:30:51,997][laptop][DEBUG ] Setting up radosgw (13.2.2-1xenial) ...
+[2018-09-26 20:30:52,312][laptop][DEBUG ] start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+[2018-09-26 20:30:53,227][laptop][DEBUG ] Setting up ceph-base (13.2.2-1xenial) ...
+[2018-09-26 20:30:53,243][laptop][DEBUG ] Installing new version of config file /etc/init.d/ceph ...
+[2018-09-26 20:30:53,557][laptop][DEBUG ] start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+[2018-09-26 20:30:53,972][laptop][DEBUG ] Setting up python-bcrypt (2.0.0-2build1) ...
+[2018-09-26 20:30:54,186][laptop][DEBUG ] Setting up ceph-mgr (13.2.2-1xenial) ...
+[2018-09-26 20:30:54,400][laptop][DEBUG ] start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+[2018-09-26 20:30:55,115][laptop][DEBUG ] Setting up ceph-mon (13.2.2-1xenial) ...
+[2018-09-26 20:30:55,379][laptop][DEBUG ] start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+[2018-09-26 20:30:55,794][laptop][DEBUG ] Setting up ceph-mds (13.2.2-1xenial) ...
+[2018-09-26 20:30:56,008][laptop][DEBUG ] start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+[2018-09-26 20:30:56,473][laptop][DEBUG ] Setting up ceph-osd (13.2.2-1xenial) ...
+[2018-09-26 20:30:57,087][laptop][DEBUG ] start: Unable to connect to Upstart: Failed to connect to socket /com/ubuntu/upstart: Connection refused
+[2018-09-26 20:30:57,103][laptop][DEBUG ] chown: cannot access '/var/lib/ceph/osd/*/block*': No such file or directory
+[2018-09-26 20:30:57,768][laptop][DEBUG ] Setting up ceph (13.2.2-1xenial) ...
+[2018-09-26 20:30:57,932][laptop][DEBUG ] Processing triggers for libc-bin (2.23-0ubuntu10) ...
+[2018-09-26 20:30:58,096][laptop][DEBUG ] Processing triggers for systemd (229-4ubuntu21.4) ...
+[2018-09-26 20:30:58,310][laptop][DEBUG ] Processing triggers for ureadahead (0.100.0-19) ...
+[2018-09-26 20:31:00,736][laptop][INFO  ] Running command: sudo ceph --version
+[2018-09-26 20:31:00,856][laptop][DEBUG ] ceph version 13.2.2 (02899bfda814146b021136e9d8e80eba494e1126) mimic (stable)
+[2018-09-26 20:33:30,560][ceph_deploy.conf][DEBUG ] found configuration file at: /home/roger/.cephdeploy.conf
+[2018-09-26 20:33:30,560][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy admin laptop
+[2018-09-26 20:33:30,560][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2018-09-26 20:33:30,560][ceph_deploy.cli][INFO  ]  username                      : None
+[2018-09-26 20:33:30,560][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2018-09-26 20:33:30,560][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2018-09-26 20:33:30,560][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2018-09-26 20:33:30,560][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7f461cd35cf8>
+[2018-09-26 20:33:30,561][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2018-09-26 20:33:30,561][ceph_deploy.cli][INFO  ]  client                        : ['laptop']
+[2018-09-26 20:33:30,561][ceph_deploy.cli][INFO  ]  func                          : <function admin at 0x7f461d62dc08>
+[2018-09-26 20:33:30,561][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2018-09-26 20:33:30,561][ceph_deploy.cli][INFO  ]  default_release               : False
+[2018-09-26 20:33:30,561][ceph_deploy][ERROR ] ConfigError: Cannot load config: [Errno 2] No such file or directory: 'ceph.conf'; has `ceph-deploy new` been run in this directory?
+
+[2018-10-02 06:59:31,094][ceph_deploy.conf][DEBUG ] found configuration file at: /home/roger/.cephdeploy.conf
+[2018-10-02 06:59:31,101][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy install --release mimic mon3
+[2018-10-02 06:59:31,101][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2018-10-02 06:59:31,101][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2018-10-02 06:59:31,101][ceph_deploy.cli][INFO  ]  testing                       : None
+[2018-10-02 06:59:31,101][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7f37a32d0f80>
+[2018-10-02 06:59:31,101][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2018-10-02 06:59:31,101][ceph_deploy.cli][INFO  ]  dev_commit                    : None
+[2018-10-02 06:59:31,102][ceph_deploy.cli][INFO  ]  install_mds                   : False
+[2018-10-02 06:59:31,102][ceph_deploy.cli][INFO  ]  stable                        : None
+[2018-10-02 06:59:31,102][ceph_deploy.cli][INFO  ]  default_release               : False
+[2018-10-02 06:59:31,102][ceph_deploy.cli][INFO  ]  username                      : None
+[2018-10-02 06:59:31,102][ceph_deploy.cli][INFO  ]  adjust_repos                  : True
+[2018-10-02 06:59:31,102][ceph_deploy.cli][INFO  ]  func                          : <function install at 0x7f37a378e1b8>
+[2018-10-02 06:59:31,102][ceph_deploy.cli][INFO  ]  install_mgr                   : False
+[2018-10-02 06:59:31,102][ceph_deploy.cli][INFO  ]  install_all                   : False
+[2018-10-02 06:59:31,102][ceph_deploy.cli][INFO  ]  repo                          : False
+[2018-10-02 06:59:31,102][ceph_deploy.cli][INFO  ]  host                          : ['mon3']
+[2018-10-02 06:59:31,102][ceph_deploy.cli][INFO  ]  install_rgw                   : False
+[2018-10-02 06:59:31,102][ceph_deploy.cli][INFO  ]  install_tests                 : False
+[2018-10-02 06:59:31,103][ceph_deploy.cli][INFO  ]  repo_url                      : None
+[2018-10-02 06:59:31,103][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2018-10-02 06:59:31,103][ceph_deploy.cli][INFO  ]  install_osd                   : False
+[2018-10-02 06:59:31,103][ceph_deploy.cli][INFO  ]  version_kind                  : stable
+[2018-10-02 06:59:31,103][ceph_deploy.cli][INFO  ]  install_common                : False
+[2018-10-02 06:59:31,103][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2018-10-02 06:59:31,103][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2018-10-02 06:59:31,103][ceph_deploy.cli][INFO  ]  dev                           : master
+[2018-10-02 06:59:31,103][ceph_deploy.cli][INFO  ]  nogpgcheck                    : False
+[2018-10-02 06:59:31,103][ceph_deploy.cli][INFO  ]  local_mirror                  : None
+[2018-10-02 06:59:31,103][ceph_deploy.cli][INFO  ]  release                       : mimic
+[2018-10-02 06:59:31,104][ceph_deploy.cli][INFO  ]  install_mon                   : False
+[2018-10-02 06:59:31,104][ceph_deploy.cli][INFO  ]  gpg_url                       : None
+[2018-10-02 06:59:31,104][ceph_deploy.install][DEBUG ] Installing stable version mimic on cluster ceph hosts mon3
+[2018-10-02 06:59:31,104][ceph_deploy.install][DEBUG ] Detecting platform for host mon3 ...
+[2018-10-02 06:59:32,068][mon3][DEBUG ] connection detected need for sudo
+[2018-10-02 06:59:32,568][mon3][DEBUG ] connected to host: mon3 
+[2018-10-02 06:59:32,569][mon3][DEBUG ] detect platform information from remote host
+[2018-10-02 06:59:32,626][mon3][DEBUG ] detect machine type
+[2018-10-02 06:59:32,634][ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.5.1804 Core
+[2018-10-02 06:59:32,635][mon3][INFO  ] installing Ceph on mon3
+[2018-10-02 06:59:32,637][mon3][INFO  ] Running command: sudo yum clean all
+[2018-10-02 06:59:33,312][mon3][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 06:59:33,313][mon3][DEBUG ]               : product-id, search-disabled-repos, subscription-manager,
+[2018-10-02 06:59:33,313][mon3][DEBUG ]               : tracer_upload
+[2018-10-02 06:59:33,313][mon3][DEBUG ] This system is not registered with an entitlement server. You can use subscription-manager to register.
+[2018-10-02 06:59:33,377][mon3][DEBUG ] Cleaning repos: Ceph Ceph-noarch base ceph-source epel extras
+[2018-10-02 06:59:33,377][mon3][DEBUG ]               : group_cloud-init-el-stable updates
+[2018-10-02 06:59:33,377][mon3][DEBUG ] Cleaning up everything
+[2018-10-02 06:59:33,377][mon3][DEBUG ] Maybe you want: rm -rf /var/cache/yum, to also free up space taken by orphaned data from disabled or removed repos
+[2018-10-02 06:59:33,591][mon3][DEBUG ] Cleaning up list of fastest mirrors
+[2018-10-02 06:59:33,591][mon3][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 06:59:33,591][mon3][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id, subscription-manager
+[2018-10-02 06:59:33,591][mon3][DEBUG ] This system is not registered with an entitlement server. You can use subscription-manager to register.
+[2018-10-02 06:59:33,705][mon3][WARNING] Cannot upload enabled repos report, is this client registered?
+[2018-10-02 06:59:33,708][mon3][INFO  ] Running command: sudo yum -y install epel-release
+[2018-10-02 06:59:34,128][mon3][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 06:59:34,129][mon3][DEBUG ]               : product-id, search-disabled-repos, subscription-manager,
+[2018-10-02 06:59:34,129][mon3][DEBUG ]               : tracer_upload
+[2018-10-02 06:59:34,129][mon3][DEBUG ] This system is not registered with an entitlement server. You can use subscription-manager to register.
+[2018-10-02 06:59:34,193][mon3][DEBUG ] Determining fastest mirrors
+[2018-10-02 06:59:39,216][mon3][DEBUG ]  * base: mirrors.xmission.com
+[2018-10-02 06:59:39,216][mon3][DEBUG ]  * epel: sjc.edge.kernel.org
+[2018-10-02 06:59:39,216][mon3][DEBUG ]  * extras: mirrors.xmission.com
+[2018-10-02 06:59:39,216][mon3][DEBUG ]  * updates: mirrors.xmission.com
+[2018-10-02 06:59:50,451][mon3][DEBUG ] 8 packages excluded due to repository priority protections
+[2018-10-02 06:59:51,366][mon3][DEBUG ] Package epel-release-7-11.noarch already installed and latest version
+[2018-10-02 06:59:51,367][mon3][DEBUG ] Nothing to do
+[2018-10-02 06:59:51,367][mon3][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 06:59:51,367][mon3][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id, subscription-manager
+[2018-10-02 06:59:51,367][mon3][DEBUG ] This system is not registered with an entitlement server. You can use subscription-manager to register.
+[2018-10-02 06:59:51,431][mon3][WARNING] Cannot upload enabled repos report, is this client registered?
+[2018-10-02 06:59:51,547][mon3][INFO  ] Running command: sudo yum -y install yum-plugin-priorities
+[2018-10-02 06:59:52,018][mon3][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 06:59:52,018][mon3][DEBUG ]               : product-id, search-disabled-repos, subscription-manager,
+[2018-10-02 06:59:52,019][mon3][DEBUG ]               : tracer_upload
+[2018-10-02 06:59:52,050][mon3][DEBUG ] This system is not registered with an entitlement server. You can use subscription-manager to register.
+[2018-10-02 06:59:52,114][mon3][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 06:59:52,121][mon3][DEBUG ]  * base: mirrors.xmission.com
+[2018-10-02 06:59:52,137][mon3][DEBUG ]  * epel: sjc.edge.kernel.org
+[2018-10-02 06:59:52,137][mon3][DEBUG ]  * extras: mirrors.xmission.com
+[2018-10-02 06:59:52,137][mon3][DEBUG ]  * updates: mirrors.xmission.com
+[2018-10-02 06:59:53,954][mon3][DEBUG ] 8 packages excluded due to repository priority protections
+[2018-10-02 06:59:54,820][mon3][DEBUG ] Package yum-plugin-priorities-1.1.31-46.el7_5.noarch already installed and latest version
+[2018-10-02 06:59:54,820][mon3][DEBUG ] Nothing to do
+[2018-10-02 06:59:54,820][mon3][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 06:59:54,828][mon3][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id, subscription-manager
+[2018-10-02 06:59:54,859][mon3][DEBUG ] This system is not registered with an entitlement server. You can use subscription-manager to register.
+[2018-10-02 06:59:54,923][mon3][WARNING] Cannot upload enabled repos report, is this client registered?
+[2018-10-02 06:59:55,087][mon3][DEBUG ] Configure Yum priorities to include obsoletes
+[2018-10-02 06:59:55,090][mon3][WARNING] check_obsoletes has been enabled for Yum priorities plugin
+[2018-10-02 06:59:55,092][mon3][INFO  ] Running command: sudo rpm --import https://download.ceph.com/keys/release.asc
+[2018-10-02 06:59:55,715][mon3][INFO  ] Running command: sudo yum remove -y ceph-release
+[2018-10-02 06:59:56,138][mon3][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 06:59:56,138][mon3][DEBUG ]               : product-id, search-disabled-repos, subscription-manager,
+[2018-10-02 06:59:56,138][mon3][DEBUG ]               : tracer_upload
+[2018-10-02 06:59:56,138][mon3][DEBUG ] This system is not registered with an entitlement server. You can use subscription-manager to register.
+[2018-10-02 06:59:56,653][mon3][DEBUG ] Resolving Dependencies
+[2018-10-02 06:59:56,653][mon3][DEBUG ] --> Running transaction check
+[2018-10-02 06:59:56,654][mon3][DEBUG ] ---> Package ceph-release.noarch 0:1-1.el7 will be erased
+[2018-10-02 06:59:59,222][mon3][DEBUG ] --> Finished Dependency Resolution
+[2018-10-02 06:59:59,336][mon3][DEBUG ] 
+[2018-10-02 06:59:59,337][mon3][DEBUG ] Dependencies Resolved
+[2018-10-02 06:59:59,337][mon3][DEBUG ] 
+[2018-10-02 06:59:59,337][mon3][DEBUG ] ================================================================================
+[2018-10-02 06:59:59,337][mon3][DEBUG ]  Package              Arch           Version            Repository         Size
+[2018-10-02 06:59:59,337][mon3][DEBUG ] ================================================================================
+[2018-10-02 06:59:59,338][mon3][DEBUG ] Removing:
+[2018-10-02 06:59:59,338][mon3][DEBUG ]  ceph-release         noarch         1-1.el7            installed         544  
+[2018-10-02 06:59:59,338][mon3][DEBUG ] 
+[2018-10-02 06:59:59,338][mon3][DEBUG ] Transaction Summary
+[2018-10-02 06:59:59,338][mon3][DEBUG ] ================================================================================
+[2018-10-02 06:59:59,338][mon3][DEBUG ] Remove  1 Package
+[2018-10-02 06:59:59,338][mon3][DEBUG ] 
+[2018-10-02 06:59:59,339][mon3][DEBUG ] Installed size: 544  
+[2018-10-02 06:59:59,339][mon3][DEBUG ] Downloading packages:
+[2018-10-02 06:59:59,339][mon3][DEBUG ] Running transaction check
+[2018-10-02 06:59:59,339][mon3][DEBUG ] Running transaction test
+[2018-10-02 06:59:59,339][mon3][DEBUG ] Transaction test succeeded
+[2018-10-02 06:59:59,339][mon3][DEBUG ] Running transaction
+[2018-10-02 06:59:59,503][mon3][DEBUG ]   Erasing    : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 06:59:59,503][mon3][DEBUG ] warning: /etc/yum.repos.d/ceph.repo saved as /etc/yum.repos.d/ceph.repo.rpmsave
+[2018-10-02 06:59:59,567][mon3][DEBUG ] Uploading Package Profile
+[2018-10-02 06:59:59,932][mon3][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 06:59:59,932][mon3][DEBUG ]  * base: mirrors.xmission.com
+[2018-10-02 06:59:59,932][mon3][DEBUG ]  * epel: sjc.edge.kernel.org
+[2018-10-02 06:59:59,932][mon3][DEBUG ]  * extras: mirrors.xmission.com
+[2018-10-02 06:59:59,933][mon3][DEBUG ]  * updates: mirrors.xmission.com
+[2018-10-02 07:00:01,750][mon3][DEBUG ] 8 packages excluded due to repository priority protections
+[2018-10-02 07:00:02,866][mon3][DEBUG ] Uploading Tracer Profile
+[2018-10-02 07:00:08,290][mon3][DEBUG ]   Verifying  : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:00:08,291][mon3][WARNING] Unable to upload Tracer Profile
+[2018-10-02 07:00:08,291][mon3][DEBUG ] 
+[2018-10-02 07:00:08,291][mon3][DEBUG ] Removed:
+[2018-10-02 07:00:08,291][mon3][DEBUG ]   ceph-release.noarch 0:1-1.el7                                                 
+[2018-10-02 07:00:08,291][mon3][DEBUG ] 
+[2018-10-02 07:00:08,291][mon3][DEBUG ] Complete!
+[2018-10-02 07:00:08,292][mon3][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:00:08,299][mon3][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id, subscription-manager
+[2018-10-02 07:00:08,331][mon3][DEBUG ] This system is not registered with an entitlement server. You can use subscription-manager to register.
+[2018-10-02 07:00:08,394][mon3][WARNING] Cannot upload enabled repos report, is this client registered?
+[2018-10-02 07:00:08,561][mon3][INFO  ] Running command: sudo yum install -y https://download.ceph.com/rpm-mimic/el7/noarch/ceph-release-1-0.el7.noarch.rpm
+[2018-10-02 07:00:08,981][mon3][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:00:08,983][mon3][DEBUG ]               : product-id, search-disabled-repos, subscription-manager,
+[2018-10-02 07:00:08,984][mon3][DEBUG ]               : tracer_upload
+[2018-10-02 07:00:08,984][mon3][DEBUG ] This system is not registered with an entitlement server. You can use subscription-manager to register.
+[2018-10-02 07:00:09,599][mon3][DEBUG ] Examining /var/tmp/yum-root-A7N5fP/ceph-release-1-0.el7.noarch.rpm: ceph-release-1-1.el7.noarch
+[2018-10-02 07:00:09,599][mon3][DEBUG ] Marking /var/tmp/yum-root-A7N5fP/ceph-release-1-0.el7.noarch.rpm to be installed
+[2018-10-02 07:00:09,599][mon3][DEBUG ] Resolving Dependencies
+[2018-10-02 07:00:09,599][mon3][DEBUG ] --> Running transaction check
+[2018-10-02 07:00:09,600][mon3][DEBUG ] ---> Package ceph-release.noarch 0:1-1.el7 will be installed
+[2018-10-02 07:00:10,615][mon3][DEBUG ] --> Finished Dependency Resolution
+[2018-10-02 07:00:10,930][mon3][DEBUG ] 
+[2018-10-02 07:00:10,930][mon3][DEBUG ] Dependencies Resolved
+[2018-10-02 07:00:10,930][mon3][DEBUG ] 
+[2018-10-02 07:00:10,930][mon3][DEBUG ] ================================================================================
+[2018-10-02 07:00:10,931][mon3][DEBUG ]  Package          Arch       Version     Repository                        Size
+[2018-10-02 07:00:10,931][mon3][DEBUG ] ================================================================================
+[2018-10-02 07:00:10,931][mon3][DEBUG ] Installing:
+[2018-10-02 07:00:10,931][mon3][DEBUG ]  ceph-release     noarch     1-1.el7     /ceph-release-1-0.el7.noarch     535  
+[2018-10-02 07:00:10,931][mon3][DEBUG ] 
+[2018-10-02 07:00:10,931][mon3][DEBUG ] Transaction Summary
+[2018-10-02 07:00:10,932][mon3][DEBUG ] ================================================================================
+[2018-10-02 07:00:10,932][mon3][DEBUG ] Install  1 Package
+[2018-10-02 07:00:10,932][mon3][DEBUG ] 
+[2018-10-02 07:00:10,932][mon3][DEBUG ] Total size: 535  
+[2018-10-02 07:00:10,932][mon3][DEBUG ] Installed size: 535  
+[2018-10-02 07:00:10,932][mon3][DEBUG ] Downloading packages:
+[2018-10-02 07:00:10,933][mon3][DEBUG ] Running transaction check
+[2018-10-02 07:00:10,933][mon3][DEBUG ] Running transaction test
+[2018-10-02 07:00:10,933][mon3][DEBUG ] Transaction test succeeded
+[2018-10-02 07:00:10,933][mon3][DEBUG ] Running transaction
+[2018-10-02 07:00:11,047][mon3][DEBUG ]   Installing : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:00:11,047][mon3][DEBUG ] Uploading Package Profile
+[2018-10-02 07:00:11,311][mon3][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:00:11,312][mon3][DEBUG ]  * base: mirrors.xmission.com
+[2018-10-02 07:00:11,312][mon3][DEBUG ]  * epel: sjc.edge.kernel.org
+[2018-10-02 07:00:11,312][mon3][DEBUG ]  * extras: mirrors.xmission.com
+[2018-10-02 07:00:11,312][mon3][DEBUG ]  * updates: mirrors.xmission.com
+[2018-10-02 07:00:13,781][mon3][DEBUG ] Uploading Tracer Profile
+[2018-10-02 07:00:19,105][mon3][DEBUG ]   Verifying  : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:00:19,105][mon3][WARNING] Unable to upload Tracer Profile
+[2018-10-02 07:00:19,105][mon3][DEBUG ] 
+[2018-10-02 07:00:19,106][mon3][DEBUG ] Installed:
+[2018-10-02 07:00:19,106][mon3][DEBUG ]   ceph-release.noarch 0:1-1.el7                                                 
+[2018-10-02 07:00:19,106][mon3][DEBUG ] 
+[2018-10-02 07:00:19,106][mon3][DEBUG ] Complete!
+[2018-10-02 07:00:19,106][mon3][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:00:19,107][mon3][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id, subscription-manager
+[2018-10-02 07:00:19,107][mon3][DEBUG ] This system is not registered with an entitlement server. You can use subscription-manager to register.
+[2018-10-02 07:00:19,221][mon3][WARNING] Cannot upload enabled repos report, is this client registered?
+[2018-10-02 07:00:19,335][mon3][WARNING] ensuring that /etc/yum.repos.d/ceph.repo contains a high priority
+[2018-10-02 07:00:19,338][mon3][WARNING] altered ceph.repo priorities to contain: priority=1
+[2018-10-02 07:00:19,340][mon3][INFO  ] Running command: sudo yum -y install ceph ceph-radosgw
+[2018-10-02 07:00:19,861][mon3][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:00:19,862][mon3][DEBUG ]               : product-id, search-disabled-repos, subscription-manager,
+[2018-10-02 07:00:19,862][mon3][DEBUG ]               : tracer_upload
+[2018-10-02 07:00:19,877][mon3][DEBUG ] This system is not registered with an entitlement server. You can use subscription-manager to register.
+[2018-10-02 07:00:19,995][mon3][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:00:19,995][mon3][DEBUG ]  * base: mirrors.xmission.com
+[2018-10-02 07:00:19,995][mon3][DEBUG ]  * epel: sjc.edge.kernel.org
+[2018-10-02 07:00:19,999][mon3][DEBUG ]  * extras: mirrors.xmission.com
+[2018-10-02 07:00:20,000][mon3][DEBUG ]  * updates: mirrors.xmission.com
+[2018-10-02 07:00:22,923][mon3][DEBUG ] 8 packages excluded due to repository priority protections
+[2018-10-02 07:00:24,239][mon3][DEBUG ] Resolving Dependencies
+[2018-10-02 07:00:24,255][mon3][DEBUG ] --> Running transaction check
+[2018-10-02 07:00:24,255][mon3][DEBUG ] ---> Package ceph.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:00:24,255][mon3][DEBUG ] --> Processing Dependency: ceph-mon = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,319][mon3][DEBUG ] --> Processing Dependency: ceph-osd = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,319][mon3][DEBUG ] --> Processing Dependency: ceph-mgr = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,320][mon3][DEBUG ] --> Processing Dependency: ceph-mds = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,320][mon3][DEBUG ] ---> Package ceph-radosgw.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:00:24,351][mon3][DEBUG ] --> Processing Dependency: librados2 = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,352][mon3][DEBUG ] --> Processing Dependency: ceph-selinux = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,352][mon3][DEBUG ] --> Processing Dependency: ceph-common = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,359][mon3][DEBUG ] --> Processing Dependency: librgw2 = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,359][mon3][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,360][mon3][DEBUG ] --> Running transaction check
+[2018-10-02 07:00:24,360][mon3][DEBUG ] ---> Package ceph-common.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,367][mon3][DEBUG ] --> Processing Dependency: ceph-common = 2:12.2.8-0.el7 for package: 2:ceph-base-12.2.8-0.el7.x86_64
+[2018-10-02 07:00:24,367][mon3][DEBUG ] ---> Package ceph-common.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,399][mon3][DEBUG ] --> Processing Dependency: python-rbd = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,399][mon3][DEBUG ] --> Processing Dependency: librbd1 = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,402][mon3][DEBUG ] --> Processing Dependency: python-rados = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,402][mon3][DEBUG ] --> Processing Dependency: python-cephfs = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,403][mon3][DEBUG ] --> Processing Dependency: python-rgw = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,403][mon3][DEBUG ] --> Processing Dependency: libcephfs2 = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,418][mon3][DEBUG ] --> Processing Dependency: libradosstriper1 = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,418][mon3][DEBUG ] ---> Package ceph-mds.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:00:24,419][mon3][DEBUG ] ---> Package ceph-mgr.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,419][mon3][DEBUG ] ---> Package ceph-mgr.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,426][mon3][DEBUG ] --> Processing Dependency: python-bcrypt for package: 2:ceph-mgr-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,426][mon3][DEBUG ] --> Processing Dependency: python-routes for package: 2:ceph-mgr-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,426][mon3][DEBUG ] ---> Package ceph-mon.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,426][mon3][DEBUG ] ---> Package ceph-mon.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,442][mon3][DEBUG ] ---> Package ceph-osd.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:00:24,442][mon3][DEBUG ] ---> Package ceph-selinux.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,442][mon3][DEBUG ] ---> Package ceph-selinux.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,449][mon3][DEBUG ] ---> Package liboath.x86_64 0:2.4.1-9.el7 will be installed
+[2018-10-02 07:00:24,449][mon3][DEBUG ] ---> Package librados2.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,450][mon3][DEBUG ] ---> Package librados2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,465][mon3][DEBUG ] ---> Package librgw2.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,465][mon3][DEBUG ] ---> Package librgw2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,465][mon3][DEBUG ] --> Running transaction check
+[2018-10-02 07:00:24,466][mon3][DEBUG ] ---> Package ceph-base.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,466][mon3][DEBUG ] ---> Package ceph-base.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,473][mon3][DEBUG ] --> Processing Dependency: e2fsprogs for package: 2:ceph-base-13.2.2-0.el7.x86_64
+[2018-10-02 07:00:24,489][mon3][DEBUG ] ---> Package libcephfs2.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,489][mon3][DEBUG ] ---> Package libcephfs2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,489][mon3][DEBUG ] ---> Package libradosstriper1.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,489][mon3][DEBUG ] ---> Package libradosstriper1.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,489][mon3][DEBUG ] ---> Package librbd1.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,489][mon3][DEBUG ] ---> Package librbd1.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,493][mon3][DEBUG ] ---> Package python-cephfs.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,493][mon3][DEBUG ] ---> Package python-cephfs.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,493][mon3][DEBUG ] ---> Package python-rados.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,494][mon3][DEBUG ] ---> Package python-rados.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,494][mon3][DEBUG ] ---> Package python-rbd.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,494][mon3][DEBUG ] ---> Package python-rbd.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,494][mon3][DEBUG ] ---> Package python-rgw.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:00:24,494][mon3][DEBUG ] ---> Package python-rgw.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:00:24,494][mon3][DEBUG ] ---> Package python-routes.noarch 0:1.13-2.el7 will be installed
+[2018-10-02 07:00:24,495][mon3][DEBUG ] ---> Package python2-bcrypt.x86_64 0:3.1.4-4.el7 will be installed
+[2018-10-02 07:00:24,495][mon3][DEBUG ] --> Processing Dependency: python2-six for package: python2-bcrypt-3.1.4-4.el7.x86_64
+[2018-10-02 07:00:24,510][mon3][DEBUG ] --> Running transaction check
+[2018-10-02 07:00:24,510][mon3][DEBUG ] ---> Package e2fsprogs.x86_64 0:1.42.9-12.el7_5 will be installed
+[2018-10-02 07:00:24,511][mon3][DEBUG ] ---> Package python2-six.noarch 0:1.9.0-0.el7 will be installed
+[2018-10-02 07:00:25,529][mon3][DEBUG ] --> Finished Dependency Resolution
+[2018-10-02 07:00:25,844][mon3][DEBUG ] 
+[2018-10-02 07:00:25,844][mon3][DEBUG ] Dependencies Resolved
+[2018-10-02 07:00:25,844][mon3][DEBUG ] 
+[2018-10-02 07:00:25,844][mon3][DEBUG ] ================================================================================
+[2018-10-02 07:00:25,844][mon3][DEBUG ]  Package                Arch         Version                Repository     Size
+[2018-10-02 07:00:25,844][mon3][DEBUG ] ================================================================================
+[2018-10-02 07:00:25,844][mon3][DEBUG ] Installing:
+[2018-10-02 07:00:25,845][mon3][DEBUG ]  ceph                   x86_64       2:13.2.2-0.el7         Ceph          3.0 k
+[2018-10-02 07:00:25,845][mon3][DEBUG ]  ceph-radosgw           x86_64       2:13.2.2-0.el7         Ceph          4.4 M
+[2018-10-02 07:00:25,845][mon3][DEBUG ] Installing for dependencies:
+[2018-10-02 07:00:25,845][mon3][DEBUG ]  ceph-mds               x86_64       2:13.2.2-0.el7         Ceph          1.7 M
+[2018-10-02 07:00:25,845][mon3][DEBUG ]  ceph-osd               x86_64       2:13.2.2-0.el7         Ceph           13 M
+[2018-10-02 07:00:25,845][mon3][DEBUG ]  e2fsprogs              x86_64       1.42.9-12.el7_5        updates       699 k
+[2018-10-02 07:00:25,845][mon3][DEBUG ]  liboath                x86_64       2.4.1-9.el7            epel           35 k
+[2018-10-02 07:00:25,845][mon3][DEBUG ]  python-routes          noarch       1.13-2.el7             epel          640 k
+[2018-10-02 07:00:25,845][mon3][DEBUG ]  python2-bcrypt         x86_64       3.1.4-4.el7            epel           38 k
+[2018-10-02 07:00:25,846][mon3][DEBUG ]  python2-six            noarch       1.9.0-0.el7            epel          2.9 k
+[2018-10-02 07:00:25,846][mon3][DEBUG ] Updating for dependencies:
+[2018-10-02 07:00:25,846][mon3][DEBUG ]  ceph-base              x86_64       2:13.2.2-0.el7         Ceph          4.8 M
+[2018-10-02 07:00:25,846][mon3][DEBUG ]  ceph-common            x86_64       2:13.2.2-0.el7         Ceph           14 M
+[2018-10-02 07:00:25,846][mon3][DEBUG ]  ceph-mgr               x86_64       2:13.2.2-0.el7         Ceph          3.4 M
+[2018-10-02 07:00:25,846][mon3][DEBUG ]  ceph-mon               x86_64       2:13.2.2-0.el7         Ceph          4.0 M
+[2018-10-02 07:00:25,846][mon3][DEBUG ]  ceph-selinux           x86_64       2:13.2.2-0.el7         Ceph           20 k
+[2018-10-02 07:00:25,846][mon3][DEBUG ]  libcephfs2             x86_64       2:13.2.2-0.el7         Ceph          433 k
+[2018-10-02 07:00:25,846][mon3][DEBUG ]  librados2              x86_64       2:13.2.2-0.el7         Ceph          2.8 M
+[2018-10-02 07:00:25,847][mon3][DEBUG ]  libradosstriper1       x86_64       2:13.2.2-0.el7         Ceph          328 k
+[2018-10-02 07:00:25,847][mon3][DEBUG ]  librbd1                x86_64       2:13.2.2-0.el7         Ceph          1.2 M
+[2018-10-02 07:00:25,847][mon3][DEBUG ]  librgw2                x86_64       2:13.2.2-0.el7         Ceph          2.0 M
+[2018-10-02 07:00:25,847][mon3][DEBUG ]  python-cephfs          x86_64       2:13.2.2-0.el7         Ceph           85 k
+[2018-10-02 07:00:25,847][mon3][DEBUG ]  python-rados           x86_64       2:13.2.2-0.el7         Ceph          189 k
+[2018-10-02 07:00:25,847][mon3][DEBUG ]  python-rbd             x86_64       2:13.2.2-0.el7         Ceph          132 k
+[2018-10-02 07:00:25,847][mon3][DEBUG ]  python-rgw             x86_64       2:13.2.2-0.el7         Ceph           75 k
+[2018-10-02 07:00:25,847][mon3][DEBUG ] 
+[2018-10-02 07:00:25,847][mon3][DEBUG ] Transaction Summary
+[2018-10-02 07:00:25,847][mon3][DEBUG ] ================================================================================
+[2018-10-02 07:00:25,847][mon3][DEBUG ] Install  2 Packages (+ 7 Dependent packages)
+[2018-10-02 07:00:25,847][mon3][DEBUG ] Upgrade             ( 14 Dependent packages)
+[2018-10-02 07:00:25,848][mon3][DEBUG ] 
+[2018-10-02 07:00:25,848][mon3][DEBUG ] Total download size: 54 M
+[2018-10-02 07:00:25,848][mon3][DEBUG ] Downloading packages:
+[2018-10-02 07:00:25,848][mon3][DEBUG ] Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+[2018-10-02 07:00:31,572][mon3][DEBUG ] --------------------------------------------------------------------------------
+[2018-10-02 07:00:31,572][mon3][DEBUG ] Total                                              9.4 MB/s |  54 MB  00:05     
+[2018-10-02 07:00:31,572][mon3][DEBUG ] Running transaction check
+[2018-10-02 07:00:32,037][mon3][DEBUG ] Running transaction test
+[2018-10-02 07:00:32,552][mon3][DEBUG ] Transaction test succeeded
+[2018-10-02 07:00:32,552][mon3][DEBUG ] Running transaction
+[2018-10-02 07:00:33,768][mon3][DEBUG ]   Updating   : 2:librados2-13.2.2-0.el7.x86_64                             1/37 
+[2018-10-02 07:00:34,132][mon3][DEBUG ]   Installing : liboath-2.4.1-9.el7.x86_64                                  2/37 
+[2018-10-02 07:00:34,296][mon3][DEBUG ]   Updating   : 2:librgw2-13.2.2-0.el7.x86_64                               3/37 
+[2018-10-02 07:00:34,510][mon3][DEBUG ]   Updating   : 2:libcephfs2-13.2.2-0.el7.x86_64                            4/37 
+[2018-10-02 07:00:34,624][mon3][DEBUG ]   Updating   : 2:librbd1-13.2.2-0.el7.x86_64                               5/37 
+[2018-10-02 07:00:34,738][mon3][DEBUG ]   Updating   : 2:python-rados-13.2.2-0.el7.x86_64                          6/37 
+[2018-10-02 07:00:34,770][mon3][DEBUG ]   Updating   : 2:python-rbd-13.2.2-0.el7.x86_64                            7/37 
+[2018-10-02 07:00:34,834][mon3][DEBUG ]   Updating   : 2:python-rgw-13.2.2-0.el7.x86_64                            8/37 
+[2018-10-02 07:00:34,948][mon3][DEBUG ]   Updating   : 2:python-cephfs-13.2.2-0.el7.x86_64                         9/37 
+[2018-10-02 07:00:37,165][mon3][DEBUG ]   Updating   : 2:libradosstriper1-13.2.2-0.el7.x86_64                     10/37 
+[2018-10-02 07:00:37,380][mon3][DEBUG ]   Updating   : 2:ceph-common-13.2.2-0.el7.x86_64                          11/37 
+[2018-10-02 07:00:38,445][mon3][DEBUG ]   Installing : e2fsprogs-1.42.9-12.el7_5.x86_64                           12/37 
+[2018-10-02 07:00:39,361][mon3][DEBUG ]   Updating   : 2:ceph-base-13.2.2-0.el7.x86_64                            13/37 
+[2018-10-02 07:01:04,072][mon3][DEBUG ]   Updating   : 2:ceph-selinux-13.2.2-0.el7.x86_64                         14/37 
+[2018-10-02 07:01:04,636][mon3][DEBUG ]   Updating   : 2:ceph-mon-13.2.2-0.el7.x86_64                             15/37 
+[2018-10-02 07:01:07,005][mon3][DEBUG ]   Installing : 2:ceph-mds-13.2.2-0.el7.x86_64                             16/37 
+[2018-10-02 07:01:07,620][mon3][DEBUG ]   Installing : 2:ceph-osd-13.2.2-0.el7.x86_64                             17/37 
+[2018-10-02 07:01:07,784][mon3][DEBUG ]   Installing : python-routes-1.13-2.el7.noarch                            18/37 
+[2018-10-02 07:01:07,848][mon3][DEBUG ]   Installing : python2-six-1.9.0-0.el7.noarch                             19/37 
+[2018-10-02 07:01:08,764][mon3][DEBUG ]   Installing : python2-bcrypt-3.1.4-4.el7.x86_64                          20/37 
+[2018-10-02 07:01:09,128][mon3][DEBUG ]   Updating   : 2:ceph-mgr-13.2.2-0.el7.x86_64                             21/37 
+[2018-10-02 07:01:10,044][mon3][DEBUG ]   Installing : 2:ceph-13.2.2-0.el7.x86_64                                 22/37 
+[2018-10-02 07:01:10,508][mon3][DEBUG ]   Installing : 2:ceph-radosgw-13.2.2-0.el7.x86_64                         23/37 
+[2018-10-02 07:01:11,073][mon3][DEBUG ]   Cleanup    : 2:ceph-mon-12.2.8-0.el7.x86_64                             24/37 
+[2018-10-02 07:01:11,187][mon3][DEBUG ]   Cleanup    : 2:ceph-mgr-12.2.8-0.el7.x86_64                             25/37 
+[2018-10-02 07:01:11,251][mon3][DEBUG ]   Cleanup    : 2:ceph-selinux-12.2.8-0.el7.x86_64                         26/37 
+[2018-10-02 07:01:11,415][mon3][DEBUG ]   Cleanup    : 2:ceph-base-12.2.8-0.el7.x86_64                            27/37 
+[2018-10-02 07:01:11,447][mon3][DEBUG ]   Cleanup    : 2:ceph-common-12.2.8-0.el7.x86_64                          28/37 
+[2018-10-02 07:01:11,479][mon3][DEBUG ]   Cleanup    : 2:python-rbd-12.2.8-0.el7.x86_64                           29/37 
+[2018-10-02 07:01:11,511][mon3][DEBUG ]   Cleanup    : 2:python-rgw-12.2.8-0.el7.x86_64                           30/37 
+[2018-10-02 07:01:11,575][mon3][DEBUG ]   Cleanup    : 2:librgw2-12.2.8-0.el7.x86_64                              31/37 
+[2018-10-02 07:01:11,607][mon3][DEBUG ]   Cleanup    : 2:python-rados-12.2.8-0.el7.x86_64                         32/37 
+[2018-10-02 07:01:11,671][mon3][DEBUG ]   Cleanup    : 2:librbd1-12.2.8-0.el7.x86_64                              33/37 
+[2018-10-02 07:01:11,703][mon3][DEBUG ]   Cleanup    : 2:libradosstriper1-12.2.8-0.el7.x86_64                     34/37 
+[2018-10-02 07:01:11,735][mon3][DEBUG ]   Cleanup    : 2:python-cephfs-12.2.8-0.el7.x86_64                        35/37 
+[2018-10-02 07:01:11,799][mon3][DEBUG ]   Cleanup    : 2:libcephfs2-12.2.8-0.el7.x86_64                           36/37 
+[2018-10-02 07:01:11,863][mon3][DEBUG ]   Cleanup    : 2:librados2-12.2.8-0.el7.x86_64                            37/37 
+[2018-10-02 07:01:11,863][mon3][DEBUG ] Uploading Package Profile
+[2018-10-02 07:01:13,580][mon3][DEBUG ] Uploading Tracer Profile
+[2018-10-02 07:01:19,005][mon3][DEBUG ]   Verifying  : 2:libradosstriper1-13.2.2-0.el7.x86_64                      1/37 
+[2018-10-02 07:01:19,005][mon3][WARNING] Unable to upload Tracer Profile
+[2018-10-02 07:01:19,005][mon3][DEBUG ]   Verifying  : 2:python-rbd-13.2.2-0.el7.x86_64                            2/37 
+[2018-10-02 07:01:19,006][mon3][DEBUG ]   Verifying  : 2:libcephfs2-13.2.2-0.el7.x86_64                            3/37 
+[2018-10-02 07:01:19,021][mon3][DEBUG ]   Verifying  : 2:ceph-radosgw-13.2.2-0.el7.x86_64                          4/37 
+[2018-10-02 07:01:19,037][mon3][DEBUG ]   Verifying  : 2:librbd1-13.2.2-0.el7.x86_64                               5/37 
+[2018-10-02 07:01:19,052][mon3][DEBUG ]   Verifying  : 2:ceph-mon-13.2.2-0.el7.x86_64                              6/37 
+[2018-10-02 07:01:19,068][mon3][DEBUG ]   Verifying  : python2-six-1.9.0-0.el7.noarch                              7/37 
+[2018-10-02 07:01:19,084][mon3][DEBUG ]   Verifying  : 2:librgw2-13.2.2-0.el7.x86_64                               8/37 
+[2018-10-02 07:01:19,147][mon3][DEBUG ]   Verifying  : 2:ceph-mds-13.2.2-0.el7.x86_64                              9/37 
+[2018-10-02 07:01:19,148][mon3][DEBUG ]   Verifying  : python-routes-1.13-2.el7.noarch                            10/37 
+[2018-10-02 07:01:19,155][mon3][DEBUG ]   Verifying  : 2:ceph-selinux-13.2.2-0.el7.x86_64                         11/37 
+[2018-10-02 07:01:19,171][mon3][DEBUG ]   Verifying  : python2-bcrypt-3.1.4-4.el7.x86_64                          12/37 
+[2018-10-02 07:01:19,203][mon3][DEBUG ]   Verifying  : 2:python-cephfs-13.2.2-0.el7.x86_64                        13/37 
+[2018-10-02 07:01:19,203][mon3][DEBUG ]   Verifying  : 2:python-rados-13.2.2-0.el7.x86_64                         14/37 
+[2018-10-02 07:01:19,218][mon3][DEBUG ]   Verifying  : 2:ceph-osd-13.2.2-0.el7.x86_64                             15/37 
+[2018-10-02 07:01:19,234][mon3][DEBUG ]   Verifying  : 2:ceph-base-13.2.2-0.el7.x86_64                            16/37 
+[2018-10-02 07:01:19,249][mon3][DEBUG ]   Verifying  : liboath-2.4.1-9.el7.x86_64                                 17/37 
+[2018-10-02 07:01:19,265][mon3][DEBUG ]   Verifying  : 2:ceph-common-13.2.2-0.el7.x86_64                          18/37 
+[2018-10-02 07:01:19,280][mon3][DEBUG ]   Verifying  : 2:ceph-13.2.2-0.el7.x86_64                                 19/37 
+[2018-10-02 07:01:19,296][mon3][DEBUG ]   Verifying  : e2fsprogs-1.42.9-12.el7_5.x86_64                           20/37 
+[2018-10-02 07:01:19,312][mon3][DEBUG ]   Verifying  : 2:librados2-13.2.2-0.el7.x86_64                            21/37 
+[2018-10-02 07:01:19,327][mon3][DEBUG ]   Verifying  : 2:python-rgw-13.2.2-0.el7.x86_64                           22/37 
+[2018-10-02 07:01:19,359][mon3][DEBUG ]   Verifying  : 2:ceph-mgr-13.2.2-0.el7.x86_64                             23/37 
+[2018-10-02 07:01:19,359][mon3][DEBUG ]   Verifying  : 2:ceph-mgr-12.2.8-0.el7.x86_64                             24/37 
+[2018-10-02 07:01:19,359][mon3][DEBUG ]   Verifying  : 2:libcephfs2-12.2.8-0.el7.x86_64                           25/37 
+[2018-10-02 07:01:19,359][mon3][DEBUG ]   Verifying  : 2:ceph-base-12.2.8-0.el7.x86_64                            26/37 
+[2018-10-02 07:01:19,360][mon3][DEBUG ]   Verifying  : 2:python-rados-12.2.8-0.el7.x86_64                         27/37 
+[2018-10-02 07:01:19,360][mon3][DEBUG ]   Verifying  : 2:librbd1-12.2.8-0.el7.x86_64                              28/37 
+[2018-10-02 07:01:19,360][mon3][DEBUG ]   Verifying  : 2:librados2-12.2.8-0.el7.x86_64                            29/37 
+[2018-10-02 07:01:19,360][mon3][DEBUG ]   Verifying  : 2:python-cephfs-12.2.8-0.el7.x86_64                        30/37 
+[2018-10-02 07:01:19,360][mon3][DEBUG ]   Verifying  : 2:python-rgw-12.2.8-0.el7.x86_64                           31/37 
+[2018-10-02 07:01:19,360][mon3][DEBUG ]   Verifying  : 2:ceph-selinux-12.2.8-0.el7.x86_64                         32/37 
+[2018-10-02 07:01:19,360][mon3][DEBUG ]   Verifying  : 2:python-rbd-12.2.8-0.el7.x86_64                           33/37 
+[2018-10-02 07:01:19,361][mon3][DEBUG ]   Verifying  : 2:librgw2-12.2.8-0.el7.x86_64                              34/37 
+[2018-10-02 07:01:19,361][mon3][DEBUG ]   Verifying  : 2:ceph-mon-12.2.8-0.el7.x86_64                             35/37 
+[2018-10-02 07:01:19,361][mon3][DEBUG ]   Verifying  : 2:libradosstriper1-12.2.8-0.el7.x86_64                     36/37 
+[2018-10-02 07:01:19,525][mon3][DEBUG ]   Verifying  : 2:ceph-common-12.2.8-0.el7.x86_64                          37/37 
+[2018-10-02 07:01:19,525][mon3][DEBUG ] 
+[2018-10-02 07:01:19,525][mon3][DEBUG ] Installed:
+[2018-10-02 07:01:19,525][mon3][DEBUG ]   ceph.x86_64 2:13.2.2-0.el7         ceph-radosgw.x86_64 2:13.2.2-0.el7        
+[2018-10-02 07:01:19,526][mon3][DEBUG ] 
+[2018-10-02 07:01:19,526][mon3][DEBUG ] Dependency Installed:
+[2018-10-02 07:01:19,526][mon3][DEBUG ]   ceph-mds.x86_64 2:13.2.2-0.el7         ceph-osd.x86_64 2:13.2.2-0.el7         
+[2018-10-02 07:01:19,526][mon3][DEBUG ]   e2fsprogs.x86_64 0:1.42.9-12.el7_5     liboath.x86_64 0:2.4.1-9.el7           
+[2018-10-02 07:01:19,526][mon3][DEBUG ]   python-routes.noarch 0:1.13-2.el7      python2-bcrypt.x86_64 0:3.1.4-4.el7    
+[2018-10-02 07:01:19,526][mon3][DEBUG ]   python2-six.noarch 0:1.9.0-0.el7      
+[2018-10-02 07:01:19,527][mon3][DEBUG ] 
+[2018-10-02 07:01:19,527][mon3][DEBUG ] Dependency Updated:
+[2018-10-02 07:01:19,527][mon3][DEBUG ]   ceph-base.x86_64 2:13.2.2-0.el7       ceph-common.x86_64 2:13.2.2-0.el7       
+[2018-10-02 07:01:19,527][mon3][DEBUG ]   ceph-mgr.x86_64 2:13.2.2-0.el7        ceph-mon.x86_64 2:13.2.2-0.el7          
+[2018-10-02 07:01:19,527][mon3][DEBUG ]   ceph-selinux.x86_64 2:13.2.2-0.el7    libcephfs2.x86_64 2:13.2.2-0.el7        
+[2018-10-02 07:01:19,527][mon3][DEBUG ]   librados2.x86_64 2:13.2.2-0.el7       libradosstriper1.x86_64 2:13.2.2-0.el7  
+[2018-10-02 07:01:19,527][mon3][DEBUG ]   librbd1.x86_64 2:13.2.2-0.el7         librgw2.x86_64 2:13.2.2-0.el7           
+[2018-10-02 07:01:19,528][mon3][DEBUG ]   python-cephfs.x86_64 2:13.2.2-0.el7   python-rados.x86_64 2:13.2.2-0.el7      
+[2018-10-02 07:01:19,528][mon3][DEBUG ]   python-rbd.x86_64 2:13.2.2-0.el7      python-rgw.x86_64 2:13.2.2-0.el7        
+[2018-10-02 07:01:19,528][mon3][DEBUG ] 
+[2018-10-02 07:01:19,528][mon3][DEBUG ] Complete!
+[2018-10-02 07:01:19,528][mon3][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:01:19,560][mon3][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id, subscription-manager
+[2018-10-02 07:01:19,576][mon3][DEBUG ] This system is not registered with an entitlement server. You can use subscription-manager to register.
+[2018-10-02 07:01:19,690][mon3][WARNING] Cannot upload enabled repos report, is this client registered?
+[2018-10-02 07:01:19,806][mon3][INFO  ] Running command: sudo ceph --version
+[2018-10-02 07:01:20,077][mon3][DEBUG ] ceph version 13.2.2 (02899bfda814146b021136e9d8e80eba494e1126) mimic (stable)
+[2018-10-02 07:02:44,854][ceph_deploy.conf][DEBUG ] found configuration file at: /home/roger/.cephdeploy.conf
+[2018-10-02 07:02:44,855][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy install --release mimic mon2
+[2018-10-02 07:02:44,855][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2018-10-02 07:02:44,855][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2018-10-02 07:02:44,855][ceph_deploy.cli][INFO  ]  testing                       : None
+[2018-10-02 07:02:44,855][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7f12558b2f80>
+[2018-10-02 07:02:44,855][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2018-10-02 07:02:44,855][ceph_deploy.cli][INFO  ]  dev_commit                    : None
+[2018-10-02 07:02:44,855][ceph_deploy.cli][INFO  ]  install_mds                   : False
+[2018-10-02 07:02:44,855][ceph_deploy.cli][INFO  ]  stable                        : None
+[2018-10-02 07:02:44,855][ceph_deploy.cli][INFO  ]  default_release               : False
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  username                      : None
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  adjust_repos                  : True
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  func                          : <function install at 0x7f1255d701b8>
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  install_mgr                   : False
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  install_all                   : False
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  repo                          : False
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  host                          : ['mon2']
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  install_rgw                   : False
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  install_tests                 : False
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  repo_url                      : None
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  install_osd                   : False
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  version_kind                  : stable
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  install_common                : False
+[2018-10-02 07:02:44,856][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2018-10-02 07:02:44,857][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2018-10-02 07:02:44,857][ceph_deploy.cli][INFO  ]  dev                           : master
+[2018-10-02 07:02:44,857][ceph_deploy.cli][INFO  ]  nogpgcheck                    : False
+[2018-10-02 07:02:44,857][ceph_deploy.cli][INFO  ]  local_mirror                  : None
+[2018-10-02 07:02:44,857][ceph_deploy.cli][INFO  ]  release                       : mimic
+[2018-10-02 07:02:44,857][ceph_deploy.cli][INFO  ]  install_mon                   : False
+[2018-10-02 07:02:44,857][ceph_deploy.cli][INFO  ]  gpg_url                       : None
+[2018-10-02 07:02:44,857][ceph_deploy.install][DEBUG ] Installing stable version mimic on cluster ceph hosts mon2
+[2018-10-02 07:02:44,857][ceph_deploy.install][DEBUG ] Detecting platform for host mon2 ...
+[2018-10-02 07:02:45,311][mon2][DEBUG ] connection detected need for sudo
+[2018-10-02 07:02:45,792][mon2][DEBUG ] connected to host: mon2 
+[2018-10-02 07:02:45,793][mon2][DEBUG ] detect platform information from remote host
+[2018-10-02 07:02:45,823][mon2][DEBUG ] detect machine type
+[2018-10-02 07:02:45,832][ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.5.1804 Core
+[2018-10-02 07:02:45,832][mon2][INFO  ] installing Ceph on mon2
+[2018-10-02 07:02:45,835][mon2][INFO  ] Running command: sudo yum clean all
+[2018-10-02 07:02:46,261][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:02:46,262][mon2][DEBUG ]               : product-id, search-disabled-repos, subscription-manager,
+[2018-10-02 07:02:46,262][mon2][DEBUG ]               : tracer_upload
+[2018-10-02 07:02:46,676][mon2][DEBUG ] This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+[2018-10-02 07:02:46,740][mon2][DEBUG ] Cleaning repos: Ceph Ceph-noarch base ceph-source group_cloud-init-el-stable
+[2018-10-02 07:02:46,740][mon2][DEBUG ]               : updates
+[2018-10-02 07:02:46,741][mon2][DEBUG ] Cleaning up everything
+[2018-10-02 07:02:46,741][mon2][DEBUG ] Maybe you want: rm -rf /var/cache/yum, to also free up space taken by orphaned data from disabled or removed repos
+[2018-10-02 07:02:46,772][mon2][DEBUG ] Cleaning up list of fastest mirrors
+[2018-10-02 07:02:46,773][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:02:46,776][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id, subscription-manager
+[2018-10-02 07:02:47,191][mon2][DEBUG ] This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+[2018-10-02 07:02:47,257][mon2][INFO  ] Running command: sudo yum -y install epel-release
+[2018-10-02 07:02:47,677][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:02:47,677][mon2][DEBUG ]               : product-id, search-disabled-repos, subscription-manager,
+[2018-10-02 07:02:47,678][mon2][DEBUG ]               : tracer_upload
+[2018-10-02 07:02:48,042][mon2][DEBUG ] This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+[2018-10-02 07:02:48,105][mon2][DEBUG ] Determining fastest mirrors
+[2018-10-02 07:02:48,520][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:02:48,520][mon2][DEBUG ]  * updates: mirror.keystealth.org
+[2018-10-02 07:02:58,302][mon2][DEBUG ] 7 packages excluded due to repository priority protections
+[2018-10-02 07:02:58,516][mon2][DEBUG ] Nothing to do
+[2018-10-02 07:02:58,516][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:02:58,516][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id, subscription-manager
+[2018-10-02 07:02:58,931][mon2][DEBUG ] This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+[2018-10-02 07:02:59,047][mon2][INFO  ] Running command: sudo yum -y install yum-plugin-priorities
+[2018-10-02 07:02:59,467][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:02:59,467][mon2][DEBUG ]               : product-id, search-disabled-repos, subscription-manager,
+[2018-10-02 07:02:59,467][mon2][DEBUG ]               : tracer_upload
+[2018-10-02 07:02:59,832][mon2][DEBUG ] This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+[2018-10-02 07:02:59,895][mon2][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:02:59,896][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:02:59,911][mon2][DEBUG ]  * updates: mirror.keystealth.org
+[2018-10-02 07:03:00,777][mon2][DEBUG ] 7 packages excluded due to repository priority protections
+[2018-10-02 07:03:01,141][mon2][DEBUG ] Package yum-plugin-priorities-1.1.31-46.el7_5.noarch already installed and latest version
+[2018-10-02 07:03:01,141][mon2][DEBUG ] Nothing to do
+[2018-10-02 07:03:01,142][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:03:01,142][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id, subscription-manager
+[2018-10-02 07:03:01,456][mon2][DEBUG ] This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+[2018-10-02 07:03:01,620][mon2][DEBUG ] Configure Yum priorities to include obsoletes
+[2018-10-02 07:03:01,623][mon2][WARNING] check_obsoletes has been enabled for Yum priorities plugin
+[2018-10-02 07:03:01,625][mon2][INFO  ] Running command: sudo rpm --import https://download.ceph.com/keys/release.asc
+[2018-10-02 07:03:02,248][mon2][INFO  ] Running command: sudo yum remove -y ceph-release
+[2018-10-02 07:03:02,669][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:03:02,669][mon2][DEBUG ]               : product-id, search-disabled-repos, subscription-manager,
+[2018-10-02 07:03:02,669][mon2][DEBUG ]               : tracer_upload
+[2018-10-02 07:03:03,034][mon2][DEBUG ] This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+[2018-10-02 07:03:03,148][mon2][DEBUG ] Resolving Dependencies
+[2018-10-02 07:03:03,148][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:03:03,148][mon2][DEBUG ] ---> Package ceph-release.noarch 0:1-1.el7 will be erased
+[2018-10-02 07:03:04,614][mon2][DEBUG ] --> Finished Dependency Resolution
+[2018-10-02 07:03:04,728][mon2][DEBUG ] 
+[2018-10-02 07:03:04,729][mon2][DEBUG ] Dependencies Resolved
+[2018-10-02 07:03:04,729][mon2][DEBUG ] 
+[2018-10-02 07:03:04,729][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:03:04,729][mon2][DEBUG ]  Package              Arch           Version            Repository         Size
+[2018-10-02 07:03:04,729][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:03:04,729][mon2][DEBUG ] Removing:
+[2018-10-02 07:03:04,730][mon2][DEBUG ]  ceph-release         noarch         1-1.el7            installed         535  
+[2018-10-02 07:03:04,730][mon2][DEBUG ] 
+[2018-10-02 07:03:04,730][mon2][DEBUG ] Transaction Summary
+[2018-10-02 07:03:04,730][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:03:04,730][mon2][DEBUG ] Remove  1 Package
+[2018-10-02 07:03:04,730][mon2][DEBUG ] 
+[2018-10-02 07:03:04,731][mon2][DEBUG ] Installed size: 535  
+[2018-10-02 07:03:04,731][mon2][DEBUG ] Downloading packages:
+[2018-10-02 07:03:04,731][mon2][DEBUG ] Running transaction check
+[2018-10-02 07:03:04,731][mon2][DEBUG ] Running transaction test
+[2018-10-02 07:03:04,731][mon2][DEBUG ] Transaction test succeeded
+[2018-10-02 07:03:04,731][mon2][DEBUG ] Running transaction
+[2018-10-02 07:03:04,795][mon2][DEBUG ]   Erasing    : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:03:04,795][mon2][DEBUG ] warning: /etc/yum.repos.d/ceph.repo saved as /etc/yum.repos.d/ceph.repo.rpmsave
+[2018-10-02 07:03:04,909][mon2][DEBUG ] Uploading Package Profile
+[2018-10-02 07:03:06,025][mon2][WARNING] Unable to upload Package Profile
+[2018-10-02 07:03:06,025][mon2][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:03:06,025][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:03:06,026][mon2][DEBUG ]  * updates: mirror.keystealth.org
+[2018-10-02 07:03:06,841][mon2][DEBUG ] 7 packages excluded due to repository priority protections
+[2018-10-02 07:03:07,406][mon2][DEBUG ] Uploading Tracer Profile
+[2018-10-02 07:03:10,826][mon2][DEBUG ]   Verifying  : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:03:10,826][mon2][WARNING] Unable to upload Tracer Profile
+[2018-10-02 07:03:10,826][mon2][DEBUG ] 
+[2018-10-02 07:03:10,826][mon2][DEBUG ] Removed:
+[2018-10-02 07:03:10,826][mon2][DEBUG ]   ceph-release.noarch 0:1-1.el7                                                 
+[2018-10-02 07:03:10,827][mon2][DEBUG ] 
+[2018-10-02 07:03:10,827][mon2][DEBUG ] Complete!
+[2018-10-02 07:03:10,842][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:03:10,858][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id, subscription-manager
+[2018-10-02 07:03:11,172][mon2][DEBUG ] This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+[2018-10-02 07:03:11,339][mon2][INFO  ] Running command: sudo yum install -y https://download.ceph.com/rpm-mimic/el7/noarch/ceph-release-1-0.el7.noarch.rpm
+[2018-10-02 07:03:11,759][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:03:11,760][mon2][DEBUG ]               : product-id, search-disabled-repos, subscription-manager,
+[2018-10-02 07:03:11,760][mon2][DEBUG ]               : tracer_upload
+[2018-10-02 07:03:12,124][mon2][DEBUG ] This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+[2018-10-02 07:03:12,689][mon2][DEBUG ] Examining /var/tmp/yum-root-khJNjd/ceph-release-1-0.el7.noarch.rpm: ceph-release-1-1.el7.noarch
+[2018-10-02 07:03:12,689][mon2][DEBUG ] Marking /var/tmp/yum-root-khJNjd/ceph-release-1-0.el7.noarch.rpm to be installed
+[2018-10-02 07:03:12,689][mon2][DEBUG ] Resolving Dependencies
+[2018-10-02 07:03:12,690][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:03:12,690][mon2][DEBUG ] ---> Package ceph-release.noarch 0:1-1.el7 will be installed
+[2018-10-02 07:03:13,705][mon2][DEBUG ] --> Finished Dependency Resolution
+[2018-10-02 07:03:13,969][mon2][DEBUG ] 
+[2018-10-02 07:03:13,970][mon2][DEBUG ] Dependencies Resolved
+[2018-10-02 07:03:13,970][mon2][DEBUG ] 
+[2018-10-02 07:03:13,970][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:03:13,970][mon2][DEBUG ]  Package          Arch       Version     Repository                        Size
+[2018-10-02 07:03:13,971][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:03:13,971][mon2][DEBUG ] Installing:
+[2018-10-02 07:03:13,971][mon2][DEBUG ]  ceph-release     noarch     1-1.el7     /ceph-release-1-0.el7.noarch     535  
+[2018-10-02 07:03:13,971][mon2][DEBUG ] 
+[2018-10-02 07:03:13,971][mon2][DEBUG ] Transaction Summary
+[2018-10-02 07:03:13,971][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:03:13,972][mon2][DEBUG ] Install  1 Package
+[2018-10-02 07:03:13,972][mon2][DEBUG ] 
+[2018-10-02 07:03:13,972][mon2][DEBUG ] Total size: 535  
+[2018-10-02 07:03:13,972][mon2][DEBUG ] Installed size: 535  
+[2018-10-02 07:03:13,972][mon2][DEBUG ] Downloading packages:
+[2018-10-02 07:03:13,980][mon2][DEBUG ] Running transaction check
+[2018-10-02 07:03:13,980][mon2][DEBUG ] Running transaction test
+[2018-10-02 07:03:13,980][mon2][DEBUG ] Transaction test succeeded
+[2018-10-02 07:03:13,980][mon2][DEBUG ] Running transaction
+[2018-10-02 07:03:14,094][mon2][DEBUG ]   Installing : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:03:14,095][mon2][DEBUG ] Uploading Package Profile
+[2018-10-02 07:03:15,010][mon2][WARNING] Unable to upload Package Profile
+[2018-10-02 07:03:15,010][mon2][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:03:15,010][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:03:15,010][mon2][DEBUG ]  * updates: mirror.keystealth.org
+[2018-10-02 07:03:16,126][mon2][DEBUG ] Uploading Tracer Profile
+[2018-10-02 07:03:19,596][mon2][DEBUG ]   Verifying  : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:03:19,596][mon2][WARNING] Unable to upload Tracer Profile
+[2018-10-02 07:03:19,596][mon2][DEBUG ] 
+[2018-10-02 07:03:19,597][mon2][DEBUG ] Installed:
+[2018-10-02 07:03:19,597][mon2][DEBUG ]   ceph-release.noarch 0:1-1.el7                                                 
+[2018-10-02 07:03:19,597][mon2][DEBUG ] 
+[2018-10-02 07:03:19,597][mon2][DEBUG ] Complete!
+[2018-10-02 07:03:19,600][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:03:19,616][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id, subscription-manager
+[2018-10-02 07:03:19,980][mon2][DEBUG ] This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+[2018-10-02 07:03:20,145][mon2][WARNING] ensuring that /etc/yum.repos.d/ceph.repo contains a high priority
+[2018-10-02 07:03:20,148][mon2][WARNING] altered ceph.repo priorities to contain: priority=1
+[2018-10-02 07:03:20,150][mon2][INFO  ] Running command: sudo yum -y install ceph ceph-radosgw
+[2018-10-02 07:03:20,571][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:03:20,571][mon2][DEBUG ]               : product-id, search-disabled-repos, subscription-manager,
+[2018-10-02 07:03:20,571][mon2][DEBUG ]               : tracer_upload
+[2018-10-02 07:03:21,036][mon2][DEBUG ] This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+[2018-10-02 07:03:21,099][mon2][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:03:21,100][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:03:21,101][mon2][DEBUG ]  * updates: mirror.keystealth.org
+[2018-10-02 07:03:22,367][mon2][DEBUG ] 7 packages excluded due to repository priority protections
+[2018-10-02 07:03:22,932][mon2][DEBUG ] Resolving Dependencies
+[2018-10-02 07:03:22,932][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:03:22,932][mon2][DEBUG ] ---> Package ceph.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:03:22,932][mon2][DEBUG ] --> Processing Dependency: ceph-mon = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:22,940][mon2][DEBUG ] --> Processing Dependency: ceph-osd = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:22,940][mon2][DEBUG ] --> Processing Dependency: ceph-mgr = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:22,940][mon2][DEBUG ] --> Processing Dependency: ceph-mds = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:22,940][mon2][DEBUG ] ---> Package ceph-radosgw.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:03:23,004][mon2][DEBUG ] --> Processing Dependency: librados2 = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,004][mon2][DEBUG ] --> Processing Dependency: ceph-selinux = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,005][mon2][DEBUG ] --> Processing Dependency: ceph-common = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,005][mon2][DEBUG ] --> Processing Dependency: librgw2 = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,005][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,005][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:03:23,005][mon2][DEBUG ] ---> Package ceph-common.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:03:23,005][mon2][DEBUG ] ---> Package ceph-common.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:03:23,009][mon2][DEBUG ] --> Processing Dependency: python-rbd = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,009][mon2][DEBUG ] --> Processing Dependency: librbd1 = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,025][mon2][DEBUG ] --> Processing Dependency: python-rados = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,025][mon2][DEBUG ] --> Processing Dependency: python-cephfs = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,025][mon2][DEBUG ] --> Processing Dependency: python-rgw = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,025][mon2][DEBUG ] --> Processing Dependency: libcephfs2 = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,033][mon2][DEBUG ] --> Processing Dependency: libradosstriper1 = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,033][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.10.0)(64bit) for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,033][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.2.0)(64bit) for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,033][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,033][mon2][DEBUG ] ---> Package ceph-mds.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:03:23,034][mon2][DEBUG ] --> Processing Dependency: ceph-base = 2:13.2.2-0.el7 for package: 2:ceph-mds-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,049][mon2][DEBUG ] ---> Package ceph-mgr.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:03:23,056][mon2][DEBUG ] --> Processing Dependency: python-bcrypt for package: 2:ceph-mgr-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,057][mon2][DEBUG ] --> Processing Dependency: python-routes for package: 2:ceph-mgr-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,057][mon2][DEBUG ] ---> Package ceph-mon.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:03:23,057][mon2][DEBUG ] ---> Package ceph-osd.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:03:23,073][mon2][DEBUG ] ---> Package ceph-radosgw.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:03:23,073][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,073][mon2][DEBUG ] ---> Package ceph-selinux.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:03:23,073][mon2][DEBUG ] ---> Package librados2.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:03:23,076][mon2][DEBUG ] ---> Package librados2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:03:23,077][mon2][DEBUG ] ---> Package librgw2.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:03:23,077][mon2][DEBUG ] ---> Package librgw2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:03:23,077][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:librgw2-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,092][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:03:23,093][mon2][DEBUG ] ---> Package ceph-base.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:03:23,100][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.10.0)(64bit) for package: 2:ceph-base-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,100][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.12.0)(64bit) for package: 2:ceph-base-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,100][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.2.0)(64bit) for package: 2:ceph-base-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,100][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-base-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,100][mon2][DEBUG ] ---> Package ceph-common.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:03:23,116][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.10.0)(64bit) for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,116][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.2.0)(64bit) for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,116][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,116][mon2][DEBUG ] ---> Package ceph-mgr.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:03:23,117][mon2][DEBUG ] --> Processing Dependency: python-bcrypt for package: 2:ceph-mgr-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,117][mon2][DEBUG ] --> Processing Dependency: python-routes for package: 2:ceph-mgr-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,117][mon2][DEBUG ] ---> Package ceph-radosgw.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:03:23,124][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,125][mon2][DEBUG ] ---> Package libcephfs2.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:03:23,125][mon2][DEBUG ] ---> Package libcephfs2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:03:23,125][mon2][DEBUG ] ---> Package libradosstriper1.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:03:23,125][mon2][DEBUG ] ---> Package libradosstriper1.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:03:23,125][mon2][DEBUG ] ---> Package librbd1.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:03:23,125][mon2][DEBUG ] ---> Package librbd1.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:03:23,126][mon2][DEBUG ] ---> Package librgw2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:03:23,133][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:librgw2-13.2.2-0.el7.x86_64
+[2018-10-02 07:03:23,134][mon2][DEBUG ] ---> Package python-cephfs.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:03:23,134][mon2][DEBUG ] ---> Package python-cephfs.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:03:23,134][mon2][DEBUG ] ---> Package python-rados.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:03:23,134][mon2][DEBUG ] ---> Package python-rados.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:03:23,134][mon2][DEBUG ] ---> Package python-rbd.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:03:23,134][mon2][DEBUG ] ---> Package python-rbd.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:03:23,134][mon2][DEBUG ] ---> Package python-rgw.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:03:23,134][mon2][DEBUG ] ---> Package python-rgw.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:03:24,150][mon2][DEBUG ] --> Finished Dependency Resolution
+[2018-10-02 07:03:24,165][mon2][DEBUG ]  You could try using --skip-broken to work around the problem
+[2018-10-02 07:03:24,166][mon2][WARNING] Error: Package: 2:ceph-common-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:03:24,166][mon2][WARNING]            Requires: liboath.so.0(LIBOATH_1.2.0)(64bit)
+[2018-10-02 07:03:24,166][mon2][WARNING] Error: Package: 2:librgw2-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:03:24,166][mon2][WARNING]            Requires: liboath.so.0()(64bit)
+[2018-10-02 07:03:24,166][mon2][WARNING] Error: Package: 2:ceph-base-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:03:24,167][mon2][WARNING]            Requires: liboath.so.0(LIBOATH_1.2.0)(64bit)
+[2018-10-02 07:03:24,167][mon2][WARNING] Error: Package: 2:ceph-radosgw-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:03:24,167][mon2][WARNING]            Requires: liboath.so.0()(64bit)
+[2018-10-02 07:03:24,167][mon2][WARNING] Error: Package: 2:ceph-common-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:03:24,167][mon2][WARNING]            Requires: liboath.so.0(LIBOATH_1.10.0)(64bit)
+[2018-10-02 07:03:24,168][mon2][WARNING] Error: Package: 2:ceph-common-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:03:24,168][mon2][WARNING]            Requires: liboath.so.0()(64bit)
+[2018-10-02 07:03:24,168][mon2][WARNING] Error: Package: 2:ceph-base-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:03:24,168][mon2][WARNING]            Requires: liboath.so.0(LIBOATH_1.12.0)(64bit)
+[2018-10-02 07:03:24,168][mon2][WARNING] Error: Package: 2:ceph-mgr-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:03:24,168][mon2][WARNING]            Requires: python-routes
+[2018-10-02 07:03:24,169][mon2][WARNING] Error: Package: 2:ceph-base-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:03:24,169][mon2][WARNING]            Requires: liboath.so.0()(64bit)
+[2018-10-02 07:03:24,169][mon2][WARNING] Error: Package: 2:ceph-base-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:03:24,169][mon2][WARNING]            Requires: liboath.so.0(LIBOATH_1.10.0)(64bit)
+[2018-10-02 07:03:24,169][mon2][WARNING] Error: Package: 2:ceph-mgr-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:03:24,169][mon2][WARNING]            Requires: python-bcrypt
+[2018-10-02 07:03:25,185][mon2][DEBUG ]  You could try running: rpm -Va --nofiles --nodigest
+[2018-10-02 07:03:25,217][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:03:25,224][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id, subscription-manager
+[2018-10-02 07:03:25,588][mon2][DEBUG ] This system is registered with an entitlement server, but is not receiving updates. You can use subscription-manager to assign subscriptions.
+[2018-10-02 07:03:25,753][mon2][ERROR ] RuntimeError: command returned non-zero exit status: 1
+[2018-10-02 07:03:25,753][ceph_deploy][ERROR ] RuntimeError: Failed to execute command: yum -y install ceph ceph-radosgw
+
+[2018-10-02 07:08:46,724][ceph_deploy.conf][DEBUG ] found configuration file at: /home/roger/.cephdeploy.conf
+[2018-10-02 07:08:46,724][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy install --release mimic mon2
+[2018-10-02 07:08:46,724][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2018-10-02 07:08:46,724][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  testing                       : None
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7f005a62ff80>
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  dev_commit                    : None
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  install_mds                   : False
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  stable                        : None
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  default_release               : False
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  username                      : None
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  adjust_repos                  : True
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  func                          : <function install at 0x7f005aaed1b8>
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  install_mgr                   : False
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  install_all                   : False
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  repo                          : False
+[2018-10-02 07:08:46,725][ceph_deploy.cli][INFO  ]  host                          : ['mon2']
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  install_rgw                   : False
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  install_tests                 : False
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  repo_url                      : None
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  install_osd                   : False
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  version_kind                  : stable
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  install_common                : False
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  dev                           : master
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  nogpgcheck                    : False
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  local_mirror                  : None
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  release                       : mimic
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  install_mon                   : False
+[2018-10-02 07:08:46,726][ceph_deploy.cli][INFO  ]  gpg_url                       : None
+[2018-10-02 07:08:46,727][ceph_deploy.install][DEBUG ] Installing stable version mimic on cluster ceph hosts mon2
+[2018-10-02 07:08:46,727][ceph_deploy.install][DEBUG ] Detecting platform for host mon2 ...
+[2018-10-02 07:08:47,293][mon2][DEBUG ] connection detected need for sudo
+[2018-10-02 07:08:47,772][mon2][DEBUG ] connected to host: mon2 
+[2018-10-02 07:08:47,773][mon2][DEBUG ] detect platform information from remote host
+[2018-10-02 07:08:47,803][mon2][DEBUG ] detect machine type
+[2018-10-02 07:08:47,815][ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.5.1804 Core
+[2018-10-02 07:08:47,816][mon2][INFO  ] installing Ceph on mon2
+[2018-10-02 07:08:47,819][mon2][INFO  ] Running command: sudo yum clean all
+[2018-10-02 07:08:48,243][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:08:48,243][mon2][DEBUG ]               : product-id, search-disabled-repos, tracer_upload
+[2018-10-02 07:08:48,307][mon2][DEBUG ] Cleaning repos: Ceph Ceph-noarch base ceph-source extras
+[2018-10-02 07:08:48,307][mon2][DEBUG ]               : group_cloud-init-el-stable updates
+[2018-10-02 07:08:48,308][mon2][DEBUG ] Cleaning up everything
+[2018-10-02 07:08:48,308][mon2][DEBUG ] Maybe you want: rm -rf /var/cache/yum, to also free up space taken by orphaned data from disabled or removed repos
+[2018-10-02 07:08:48,372][mon2][DEBUG ] Cleaning up list of fastest mirrors
+[2018-10-02 07:08:48,372][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:08:48,372][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id
+[2018-10-02 07:08:48,488][mon2][INFO  ] Running command: sudo yum -y install epel-release
+[2018-10-02 07:08:48,909][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:08:48,909][mon2][DEBUG ]               : product-id, search-disabled-repos, tracer_upload
+[2018-10-02 07:08:48,973][mon2][DEBUG ] Determining fastest mirrors
+[2018-10-02 07:08:49,437][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:08:49,438][mon2][DEBUG ]  * extras: mirrors.cat.pdx.edu
+[2018-10-02 07:08:49,438][mon2][DEBUG ]  * updates: repos.lax.quadranet.com
+[2018-10-02 07:08:58,719][mon2][DEBUG ] 7 packages excluded due to repository priority protections
+[2018-10-02 07:08:59,133][mon2][DEBUG ] Package epel-release-7-11.noarch already installed and latest version
+[2018-10-02 07:08:59,133][mon2][DEBUG ] Nothing to do
+[2018-10-02 07:08:59,134][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:08:59,134][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id
+[2018-10-02 07:08:59,300][mon2][INFO  ] Running command: sudo yum -y install yum-plugin-priorities
+[2018-10-02 07:08:59,720][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:08:59,721][mon2][DEBUG ]               : product-id, search-disabled-repos, tracer_upload
+[2018-10-02 07:08:59,835][mon2][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:08:59,835][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:08:59,835][mon2][DEBUG ]  * extras: mirrors.cat.pdx.edu
+[2018-10-02 07:08:59,835][mon2][DEBUG ]  * updates: repos.lax.quadranet.com
+[2018-10-02 07:09:00,700][mon2][DEBUG ] 7 packages excluded due to repository priority protections
+[2018-10-02 07:09:01,065][mon2][DEBUG ] Package yum-plugin-priorities-1.1.31-46.el7_5.noarch already installed and latest version
+[2018-10-02 07:09:01,065][mon2][DEBUG ] Nothing to do
+[2018-10-02 07:09:01,065][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:09:01,073][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id
+[2018-10-02 07:09:01,237][mon2][DEBUG ] Configure Yum priorities to include obsoletes
+[2018-10-02 07:09:01,239][mon2][WARNING] check_obsoletes has been enabled for Yum priorities plugin
+[2018-10-02 07:09:01,241][mon2][INFO  ] Running command: sudo rpm --import https://download.ceph.com/keys/release.asc
+[2018-10-02 07:09:01,865][mon2][INFO  ] Running command: sudo yum remove -y ceph-release
+[2018-10-02 07:09:02,285][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:09:02,286][mon2][DEBUG ]               : product-id, search-disabled-repos, tracer_upload
+[2018-10-02 07:09:02,450][mon2][DEBUG ] Resolving Dependencies
+[2018-10-02 07:09:02,450][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:09:02,450][mon2][DEBUG ] ---> Package ceph-release.noarch 0:1-1.el7 will be erased
+[2018-10-02 07:09:04,067][mon2][DEBUG ] --> Finished Dependency Resolution
+[2018-10-02 07:09:04,181][mon2][DEBUG ] 
+[2018-10-02 07:09:04,181][mon2][DEBUG ] Dependencies Resolved
+[2018-10-02 07:09:04,181][mon2][DEBUG ] 
+[2018-10-02 07:09:04,182][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:09:04,182][mon2][DEBUG ]  Package              Arch           Version            Repository         Size
+[2018-10-02 07:09:04,182][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:09:04,182][mon2][DEBUG ] Removing:
+[2018-10-02 07:09:04,183][mon2][DEBUG ]  ceph-release         noarch         1-1.el7            installed         535  
+[2018-10-02 07:09:04,183][mon2][DEBUG ] 
+[2018-10-02 07:09:04,183][mon2][DEBUG ] Transaction Summary
+[2018-10-02 07:09:04,183][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:09:04,184][mon2][DEBUG ] Remove  1 Package
+[2018-10-02 07:09:04,184][mon2][DEBUG ] 
+[2018-10-02 07:09:04,184][mon2][DEBUG ] Installed size: 535  
+[2018-10-02 07:09:04,184][mon2][DEBUG ] Downloading packages:
+[2018-10-02 07:09:04,184][mon2][DEBUG ] Running transaction check
+[2018-10-02 07:09:04,184][mon2][DEBUG ] Running transaction test
+[2018-10-02 07:09:04,185][mon2][DEBUG ] Transaction test succeeded
+[2018-10-02 07:09:04,185][mon2][DEBUG ] Running transaction
+[2018-10-02 07:09:04,216][mon2][DEBUG ]   Erasing    : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:09:04,217][mon2][DEBUG ] warning: /etc/yum.repos.d/ceph.repo saved as /etc/yum.repos.d/ceph.repo.rpmsave
+[2018-10-02 07:09:04,330][mon2][DEBUG ] Uploading Package Profile
+[2018-10-02 07:09:05,396][mon2][WARNING] Unable to upload Package Profile
+[2018-10-02 07:09:05,396][mon2][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:09:05,397][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:09:05,397][mon2][DEBUG ]  * extras: mirrors.cat.pdx.edu
+[2018-10-02 07:09:05,397][mon2][DEBUG ]  * updates: repos.lax.quadranet.com
+[2018-10-02 07:09:06,262][mon2][DEBUG ] 7 packages excluded due to repository priority protections
+[2018-10-02 07:09:06,777][mon2][DEBUG ] Uploading Tracer Profile
+[2018-10-02 07:09:10,247][mon2][DEBUG ]   Verifying  : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:09:10,247][mon2][WARNING] Unable to upload Tracer Profile
+[2018-10-02 07:09:10,247][mon2][DEBUG ] 
+[2018-10-02 07:09:10,248][mon2][DEBUG ] Removed:
+[2018-10-02 07:09:10,248][mon2][DEBUG ]   ceph-release.noarch 0:1-1.el7                                                 
+[2018-10-02 07:09:10,248][mon2][DEBUG ] 
+[2018-10-02 07:09:10,248][mon2][DEBUG ] Complete!
+[2018-10-02 07:09:10,264][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:09:10,271][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id
+[2018-10-02 07:09:10,437][mon2][INFO  ] Running command: sudo yum install -y https://download.ceph.com/rpm-mimic/el7/noarch/ceph-release-1-0.el7.noarch.rpm
+[2018-10-02 07:09:10,858][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:09:10,858][mon2][DEBUG ]               : product-id, search-disabled-repos, tracer_upload
+[2018-10-02 07:09:11,423][mon2][DEBUG ] Examining /var/tmp/yum-root-khJNjd/ceph-release-1-0.el7.noarch.rpm: ceph-release-1-1.el7.noarch
+[2018-10-02 07:09:11,423][mon2][DEBUG ] Marking /var/tmp/yum-root-khJNjd/ceph-release-1-0.el7.noarch.rpm to be installed
+[2018-10-02 07:09:11,423][mon2][DEBUG ] Resolving Dependencies
+[2018-10-02 07:09:11,424][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:09:11,424][mon2][DEBUG ] ---> Package ceph-release.noarch 0:1-1.el7 will be installed
+[2018-10-02 07:09:12,439][mon2][DEBUG ] --> Finished Dependency Resolution
+[2018-10-02 07:09:12,703][mon2][DEBUG ] 
+[2018-10-02 07:09:12,704][mon2][DEBUG ] Dependencies Resolved
+[2018-10-02 07:09:12,704][mon2][DEBUG ] 
+[2018-10-02 07:09:12,704][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:09:12,704][mon2][DEBUG ]  Package          Arch       Version     Repository                        Size
+[2018-10-02 07:09:12,705][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:09:12,705][mon2][DEBUG ] Installing:
+[2018-10-02 07:09:12,705][mon2][DEBUG ]  ceph-release     noarch     1-1.el7     /ceph-release-1-0.el7.noarch     535  
+[2018-10-02 07:09:12,705][mon2][DEBUG ] 
+[2018-10-02 07:09:12,705][mon2][DEBUG ] Transaction Summary
+[2018-10-02 07:09:12,705][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:09:12,706][mon2][DEBUG ] Install  1 Package
+[2018-10-02 07:09:12,706][mon2][DEBUG ] 
+[2018-10-02 07:09:12,706][mon2][DEBUG ] Total size: 535  
+[2018-10-02 07:09:12,706][mon2][DEBUG ] Installed size: 535  
+[2018-10-02 07:09:12,706][mon2][DEBUG ] Downloading packages:
+[2018-10-02 07:09:12,706][mon2][DEBUG ] Running transaction check
+[2018-10-02 07:09:12,714][mon2][DEBUG ] Running transaction test
+[2018-10-02 07:09:12,714][mon2][DEBUG ] Transaction test succeeded
+[2018-10-02 07:09:12,714][mon2][DEBUG ] Running transaction
+[2018-10-02 07:09:13,379][mon2][DEBUG ]   Installing : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:09:13,379][mon2][DEBUG ] Uploading Package Profile
+[2018-10-02 07:09:14,495][mon2][WARNING] Unable to upload Package Profile
+[2018-10-02 07:09:14,495][mon2][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:09:14,496][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:09:14,496][mon2][DEBUG ]  * extras: mirrors.cat.pdx.edu
+[2018-10-02 07:09:14,496][mon2][DEBUG ]  * updates: repos.lax.quadranet.com
+[2018-10-02 07:09:15,712][mon2][DEBUG ] Uploading Tracer Profile
+[2018-10-02 07:09:19,232][mon2][DEBUG ]   Verifying  : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:09:19,233][mon2][WARNING] Unable to upload Tracer Profile
+[2018-10-02 07:09:19,233][mon2][DEBUG ] 
+[2018-10-02 07:09:19,233][mon2][DEBUG ] Installed:
+[2018-10-02 07:09:19,233][mon2][DEBUG ]   ceph-release.noarch 0:1-1.el7                                                 
+[2018-10-02 07:09:19,233][mon2][DEBUG ] 
+[2018-10-02 07:09:19,233][mon2][DEBUG ] Complete!
+[2018-10-02 07:09:19,234][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:09:19,234][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id
+[2018-10-02 07:09:19,398][mon2][WARNING] ensuring that /etc/yum.repos.d/ceph.repo contains a high priority
+[2018-10-02 07:09:19,401][mon2][WARNING] altered ceph.repo priorities to contain: priority=1
+[2018-10-02 07:09:19,403][mon2][INFO  ] Running command: sudo yum -y install ceph ceph-radosgw
+[2018-10-02 07:09:19,824][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:09:19,824][mon2][DEBUG ]               : product-id, search-disabled-repos, tracer_upload
+[2018-10-02 07:09:19,888][mon2][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:09:19,888][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:09:19,888][mon2][DEBUG ]  * extras: mirrors.cat.pdx.edu
+[2018-10-02 07:09:19,888][mon2][DEBUG ]  * updates: repos.lax.quadranet.com
+[2018-10-02 07:09:21,204][mon2][DEBUG ] 7 packages excluded due to repository priority protections
+[2018-10-02 07:09:21,769][mon2][DEBUG ] Resolving Dependencies
+[2018-10-02 07:09:21,770][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:09:21,770][mon2][DEBUG ] ---> Package ceph.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:09:21,785][mon2][DEBUG ] --> Processing Dependency: ceph-mon = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,817][mon2][DEBUG ] --> Processing Dependency: ceph-osd = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,818][mon2][DEBUG ] --> Processing Dependency: ceph-mgr = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,818][mon2][DEBUG ] --> Processing Dependency: ceph-mds = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,818][mon2][DEBUG ] ---> Package ceph-radosgw.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:09:21,850][mon2][DEBUG ] --> Processing Dependency: librados2 = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,866][mon2][DEBUG ] --> Processing Dependency: ceph-selinux = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,866][mon2][DEBUG ] --> Processing Dependency: ceph-common = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,866][mon2][DEBUG ] --> Processing Dependency: librgw2 = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,866][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,874][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:09:21,874][mon2][DEBUG ] ---> Package ceph-common.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:09:21,874][mon2][DEBUG ] ---> Package ceph-common.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:09:21,906][mon2][DEBUG ] --> Processing Dependency: python-rbd = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,906][mon2][DEBUG ] --> Processing Dependency: librbd1 = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,906][mon2][DEBUG ] --> Processing Dependency: python-rados = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,906][mon2][DEBUG ] --> Processing Dependency: python-cephfs = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,908][mon2][DEBUG ] --> Processing Dependency: python-rgw = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,908][mon2][DEBUG ] --> Processing Dependency: libcephfs2 = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,908][mon2][DEBUG ] --> Processing Dependency: libradosstriper1 = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,923][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.10.0)(64bit) for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,924][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.2.0)(64bit) for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,924][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,924][mon2][DEBUG ] ---> Package ceph-mds.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:09:21,924][mon2][DEBUG ] --> Processing Dependency: ceph-base = 2:13.2.2-0.el7 for package: 2:ceph-mds-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,931][mon2][DEBUG ] ---> Package ceph-mgr.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:09:21,931][mon2][DEBUG ] --> Processing Dependency: python-bcrypt for package: 2:ceph-mgr-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,947][mon2][DEBUG ] --> Processing Dependency: python-routes for package: 2:ceph-mgr-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,947][mon2][DEBUG ] ---> Package ceph-mon.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:09:21,947][mon2][DEBUG ] ---> Package ceph-osd.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:09:21,947][mon2][DEBUG ] ---> Package ceph-radosgw.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:09:21,950][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,950][mon2][DEBUG ] ---> Package ceph-selinux.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:09:21,950][mon2][DEBUG ] ---> Package librados2.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:09:21,966][mon2][DEBUG ] ---> Package librados2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:09:21,966][mon2][DEBUG ] ---> Package librgw2.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:09:21,966][mon2][DEBUG ] ---> Package librgw2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:09:21,966][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:librgw2-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,966][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:09:21,966][mon2][DEBUG ] ---> Package ceph-base.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:09:21,982][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.10.0)(64bit) for package: 2:ceph-base-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,990][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.12.0)(64bit) for package: 2:ceph-base-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,990][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.2.0)(64bit) for package: 2:ceph-base-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,990][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-base-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,991][mon2][DEBUG ] ---> Package ceph-common.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:09:21,991][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.10.0)(64bit) for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,991][mon2][DEBUG ] --> Processing Dependency: liboath.so.0(LIBOATH_1.2.0)(64bit) for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:21,991][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:22,001][mon2][DEBUG ] ---> Package ceph-mgr.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:09:22,001][mon2][DEBUG ] --> Processing Dependency: python-bcrypt for package: 2:ceph-mgr-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:22,001][mon2][DEBUG ] --> Processing Dependency: python-routes for package: 2:ceph-mgr-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:22,001][mon2][DEBUG ] ---> Package ceph-radosgw.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:09:22,001][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:22,001][mon2][DEBUG ] ---> Package libcephfs2.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:09:22,001][mon2][DEBUG ] ---> Package libcephfs2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:09:22,017][mon2][DEBUG ] ---> Package libradosstriper1.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:09:22,017][mon2][DEBUG ] ---> Package libradosstriper1.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:09:22,017][mon2][DEBUG ] ---> Package librbd1.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:09:22,017][mon2][DEBUG ] ---> Package librbd1.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:09:22,017][mon2][DEBUG ] ---> Package librgw2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:09:22,017][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:librgw2-13.2.2-0.el7.x86_64
+[2018-10-02 07:09:22,017][mon2][DEBUG ] ---> Package python-cephfs.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:09:22,017][mon2][DEBUG ] ---> Package python-cephfs.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:09:22,025][mon2][DEBUG ] ---> Package python-rados.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:09:22,025][mon2][DEBUG ] ---> Package python-rados.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:09:22,025][mon2][DEBUG ] ---> Package python-rbd.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:09:22,025][mon2][DEBUG ] ---> Package python-rbd.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:09:22,025][mon2][DEBUG ] ---> Package python-rgw.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:09:22,025][mon2][DEBUG ] ---> Package python-rgw.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:09:23,041][mon2][DEBUG ] --> Finished Dependency Resolution
+[2018-10-02 07:09:23,072][mon2][DEBUG ]  You could try using --skip-broken to work around the problem
+[2018-10-02 07:09:23,073][mon2][WARNING] Error: Package: 2:ceph-common-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:09:23,073][mon2][WARNING]            Requires: liboath.so.0(LIBOATH_1.2.0)(64bit)
+[2018-10-02 07:09:23,073][mon2][WARNING] Error: Package: 2:librgw2-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:09:23,073][mon2][WARNING]            Requires: liboath.so.0()(64bit)
+[2018-10-02 07:09:23,074][mon2][WARNING] Error: Package: 2:ceph-base-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:09:23,074][mon2][WARNING]            Requires: liboath.so.0(LIBOATH_1.2.0)(64bit)
+[2018-10-02 07:09:23,074][mon2][WARNING] Error: Package: 2:ceph-radosgw-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:09:23,074][mon2][WARNING]            Requires: liboath.so.0()(64bit)
+[2018-10-02 07:09:23,074][mon2][WARNING] Error: Package: 2:ceph-common-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:09:23,075][mon2][WARNING]            Requires: liboath.so.0(LIBOATH_1.10.0)(64bit)
+[2018-10-02 07:09:23,075][mon2][WARNING] Error: Package: 2:ceph-common-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:09:23,075][mon2][WARNING]            Requires: liboath.so.0()(64bit)
+[2018-10-02 07:09:23,075][mon2][WARNING] Error: Package: 2:ceph-base-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:09:23,075][mon2][WARNING]            Requires: liboath.so.0(LIBOATH_1.12.0)(64bit)
+[2018-10-02 07:09:23,076][mon2][WARNING] Error: Package: 2:ceph-mgr-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:09:23,076][mon2][WARNING]            Requires: python-routes
+[2018-10-02 07:09:23,076][mon2][WARNING] Error: Package: 2:ceph-base-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:09:23,076][mon2][WARNING]            Requires: liboath.so.0()(64bit)
+[2018-10-02 07:09:23,076][mon2][WARNING] Error: Package: 2:ceph-base-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:09:23,077][mon2][WARNING]            Requires: liboath.so.0(LIBOATH_1.10.0)(64bit)
+[2018-10-02 07:09:23,077][mon2][WARNING] Error: Package: 2:ceph-mgr-13.2.2-0.el7.x86_64 (Ceph)
+[2018-10-02 07:09:23,077][mon2][WARNING]            Requires: python-bcrypt
+[2018-10-02 07:09:24,093][mon2][DEBUG ]  You could try running: rpm -Va --nofiles --nodigest
+[2018-10-02 07:09:24,108][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:09:24,140][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id
+[2018-10-02 07:09:24,304][mon2][ERROR ] RuntimeError: command returned non-zero exit status: 1
+[2018-10-02 07:09:24,305][ceph_deploy][ERROR ] RuntimeError: Failed to execute command: yum -y install ceph ceph-radosgw
+
+[2018-10-02 07:10:54,699][ceph_deploy.conf][DEBUG ] found configuration file at: /home/roger/.cephdeploy.conf
+[2018-10-02 07:10:54,700][ceph_deploy.cli][INFO  ] Invoked (2.0.1): /usr/bin/ceph-deploy install --release mimic mon2
+[2018-10-02 07:10:54,700][ceph_deploy.cli][INFO  ] ceph-deploy options:
+[2018-10-02 07:10:54,700][ceph_deploy.cli][INFO  ]  verbose                       : False
+[2018-10-02 07:10:54,700][ceph_deploy.cli][INFO  ]  testing                       : None
+[2018-10-02 07:10:54,700][ceph_deploy.cli][INFO  ]  cd_conf                       : <ceph_deploy.conf.cephdeploy.Conf instance at 0x7fa1815fff80>
+[2018-10-02 07:10:54,700][ceph_deploy.cli][INFO  ]  cluster                       : ceph
+[2018-10-02 07:10:54,700][ceph_deploy.cli][INFO  ]  dev_commit                    : None
+[2018-10-02 07:10:54,700][ceph_deploy.cli][INFO  ]  install_mds                   : False
+[2018-10-02 07:10:54,700][ceph_deploy.cli][INFO  ]  stable                        : None
+[2018-10-02 07:10:54,700][ceph_deploy.cli][INFO  ]  default_release               : False
+[2018-10-02 07:10:54,700][ceph_deploy.cli][INFO  ]  username                      : None
+[2018-10-02 07:10:54,700][ceph_deploy.cli][INFO  ]  adjust_repos                  : True
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  func                          : <function install at 0x7fa181abd1b8>
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  install_mgr                   : False
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  install_all                   : False
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  repo                          : False
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  host                          : ['mon2']
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  install_rgw                   : False
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  install_tests                 : False
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  repo_url                      : None
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  ceph_conf                     : None
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  install_osd                   : False
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  version_kind                  : stable
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  install_common                : False
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  overwrite_conf                : False
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  quiet                         : False
+[2018-10-02 07:10:54,701][ceph_deploy.cli][INFO  ]  dev                           : master
+[2018-10-02 07:10:54,702][ceph_deploy.cli][INFO  ]  nogpgcheck                    : False
+[2018-10-02 07:10:54,702][ceph_deploy.cli][INFO  ]  local_mirror                  : None
+[2018-10-02 07:10:54,702][ceph_deploy.cli][INFO  ]  release                       : mimic
+[2018-10-02 07:10:54,702][ceph_deploy.cli][INFO  ]  install_mon                   : False
+[2018-10-02 07:10:54,702][ceph_deploy.cli][INFO  ]  gpg_url                       : None
+[2018-10-02 07:10:54,702][ceph_deploy.install][DEBUG ] Installing stable version mimic on cluster ceph hosts mon2
+[2018-10-02 07:10:54,702][ceph_deploy.install][DEBUG ] Detecting platform for host mon2 ...
+[2018-10-02 07:10:55,150][mon2][DEBUG ] connection detected need for sudo
+[2018-10-02 07:10:55,628][mon2][DEBUG ] connected to host: mon2 
+[2018-10-02 07:10:55,629][mon2][DEBUG ] detect platform information from remote host
+[2018-10-02 07:10:55,659][mon2][DEBUG ] detect machine type
+[2018-10-02 07:10:55,667][ceph_deploy.install][INFO  ] Distro info: CentOS Linux 7.5.1804 Core
+[2018-10-02 07:10:55,668][mon2][INFO  ] installing Ceph on mon2
+[2018-10-02 07:10:55,670][mon2][INFO  ] Running command: sudo yum clean all
+[2018-10-02 07:10:56,094][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:10:56,094][mon2][DEBUG ]               : product-id, search-disabled-repos, tracer_upload
+[2018-10-02 07:10:56,158][mon2][DEBUG ] Cleaning repos: Ceph Ceph-noarch base ceph-source epel extras
+[2018-10-02 07:10:56,158][mon2][DEBUG ]               : group_cloud-init-el-stable updates
+[2018-10-02 07:10:56,158][mon2][DEBUG ] Cleaning up everything
+[2018-10-02 07:10:56,158][mon2][DEBUG ] Maybe you want: rm -rf /var/cache/yum, to also free up space taken by orphaned data from disabled or removed repos
+[2018-10-02 07:10:56,222][mon2][DEBUG ] Cleaning up list of fastest mirrors
+[2018-10-02 07:10:56,222][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:10:56,223][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id
+[2018-10-02 07:10:56,339][mon2][INFO  ] Running command: sudo yum -y install epel-release
+[2018-10-02 07:10:56,759][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:10:56,760][mon2][DEBUG ]               : product-id, search-disabled-repos, tracer_upload
+[2018-10-02 07:10:56,823][mon2][DEBUG ] Determining fastest mirrors
+[2018-10-02 07:11:01,295][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:11:01,296][mon2][DEBUG ]  * epel: mirror.prgmr.com
+[2018-10-02 07:11:01,296][mon2][DEBUG ]  * extras: mirrors.unifiedlayer.com
+[2018-10-02 07:11:01,296][mon2][DEBUG ]  * updates: repos.lax.quadranet.com
+[2018-10-02 07:11:18,492][mon2][DEBUG ] 8 packages excluded due to repository priority protections
+[2018-10-02 07:11:19,357][mon2][DEBUG ] Package epel-release-7-11.noarch already installed and latest version
+[2018-10-02 07:11:19,357][mon2][DEBUG ] Nothing to do
+[2018-10-02 07:11:19,358][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:11:19,358][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id
+[2018-10-02 07:11:19,574][mon2][INFO  ] Running command: sudo yum -y install yum-plugin-priorities
+[2018-10-02 07:11:19,995][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:11:19,995][mon2][DEBUG ]               : product-id, search-disabled-repos, tracer_upload
+[2018-10-02 07:11:20,109][mon2][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:11:20,109][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:11:20,109][mon2][DEBUG ]  * epel: mirror.prgmr.com
+[2018-10-02 07:11:20,109][mon2][DEBUG ]  * extras: mirrors.unifiedlayer.com
+[2018-10-02 07:11:20,109][mon2][DEBUG ]  * updates: repos.lax.quadranet.com
+[2018-10-02 07:11:21,826][mon2][DEBUG ] 8 packages excluded due to repository priority protections
+[2018-10-02 07:11:22,692][mon2][DEBUG ] Package yum-plugin-priorities-1.1.31-46.el7_5.noarch already installed and latest version
+[2018-10-02 07:11:22,692][mon2][DEBUG ] Nothing to do
+[2018-10-02 07:11:22,692][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:11:22,695][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id
+[2018-10-02 07:11:22,909][mon2][DEBUG ] Configure Yum priorities to include obsoletes
+[2018-10-02 07:11:22,912][mon2][WARNING] check_obsoletes has been enabled for Yum priorities plugin
+[2018-10-02 07:11:22,914][mon2][INFO  ] Running command: sudo rpm --import https://download.ceph.com/keys/release.asc
+[2018-10-02 07:11:23,788][mon2][INFO  ] Running command: sudo yum remove -y ceph-release
+[2018-10-02 07:11:24,208][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:11:24,209][mon2][DEBUG ]               : product-id, search-disabled-repos, tracer_upload
+[2018-10-02 07:11:24,322][mon2][DEBUG ] Resolving Dependencies
+[2018-10-02 07:11:24,330][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:11:24,331][mon2][DEBUG ] ---> Package ceph-release.noarch 0:1-1.el7 will be erased
+[2018-10-02 07:11:25,997][mon2][DEBUG ] --> Finished Dependency Resolution
+[2018-10-02 07:11:26,061][mon2][DEBUG ] 
+[2018-10-02 07:11:26,061][mon2][DEBUG ] Dependencies Resolved
+[2018-10-02 07:11:26,062][mon2][DEBUG ] 
+[2018-10-02 07:11:26,062][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:11:26,062][mon2][DEBUG ]  Package              Arch           Version            Repository         Size
+[2018-10-02 07:11:26,062][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:11:26,062][mon2][DEBUG ] Removing:
+[2018-10-02 07:11:26,062][mon2][DEBUG ]  ceph-release         noarch         1-1.el7            installed         535  
+[2018-10-02 07:11:26,063][mon2][DEBUG ] 
+[2018-10-02 07:11:26,063][mon2][DEBUG ] Transaction Summary
+[2018-10-02 07:11:26,063][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:11:26,063][mon2][DEBUG ] Remove  1 Package
+[2018-10-02 07:11:26,063][mon2][DEBUG ] 
+[2018-10-02 07:11:26,063][mon2][DEBUG ] Installed size: 535  
+[2018-10-02 07:11:26,064][mon2][DEBUG ] Downloading packages:
+[2018-10-02 07:11:26,064][mon2][DEBUG ] Running transaction check
+[2018-10-02 07:11:26,064][mon2][DEBUG ] Running transaction test
+[2018-10-02 07:11:26,064][mon2][DEBUG ] Transaction test succeeded
+[2018-10-02 07:11:26,064][mon2][DEBUG ] Running transaction
+[2018-10-02 07:11:26,178][mon2][DEBUG ]   Erasing    : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:11:26,178][mon2][DEBUG ] warning: /etc/yum.repos.d/ceph.repo saved as /etc/yum.repos.d/ceph.repo.rpmsave
+[2018-10-02 07:11:26,242][mon2][DEBUG ] Uploading Package Profile
+[2018-10-02 07:11:27,408][mon2][WARNING] Unable to upload Package Profile
+[2018-10-02 07:11:27,408][mon2][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:11:27,416][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:11:27,416][mon2][DEBUG ]  * epel: mirror.prgmr.com
+[2018-10-02 07:11:27,416][mon2][DEBUG ]  * extras: mirrors.unifiedlayer.com
+[2018-10-02 07:11:27,416][mon2][DEBUG ]  * updates: repos.lax.quadranet.com
+[2018-10-02 07:11:29,233][mon2][DEBUG ] 8 packages excluded due to repository priority protections
+[2018-10-02 07:11:30,349][mon2][DEBUG ] Uploading Tracer Profile
+[2018-10-02 07:11:33,869][mon2][DEBUG ]   Verifying  : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:11:33,870][mon2][WARNING] Unable to upload Tracer Profile
+[2018-10-02 07:11:33,870][mon2][DEBUG ] 
+[2018-10-02 07:11:33,870][mon2][DEBUG ] Removed:
+[2018-10-02 07:11:33,870][mon2][DEBUG ]   ceph-release.noarch 0:1-1.el7                                                 
+[2018-10-02 07:11:33,870][mon2][DEBUG ] 
+[2018-10-02 07:11:33,871][mon2][DEBUG ] Complete!
+[2018-10-02 07:11:33,886][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:11:33,902][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id
+[2018-10-02 07:11:34,118][mon2][INFO  ] Running command: sudo yum install -y https://download.ceph.com/rpm-mimic/el7/noarch/ceph-release-1-0.el7.noarch.rpm
+[2018-10-02 07:11:34,538][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:11:34,539][mon2][DEBUG ]               : product-id, search-disabled-repos, tracer_upload
+[2018-10-02 07:11:35,154][mon2][DEBUG ] Examining /var/tmp/yum-root-khJNjd/ceph-release-1-0.el7.noarch.rpm: ceph-release-1-1.el7.noarch
+[2018-10-02 07:11:35,154][mon2][DEBUG ] Marking /var/tmp/yum-root-khJNjd/ceph-release-1-0.el7.noarch.rpm to be installed
+[2018-10-02 07:11:35,154][mon2][DEBUG ] Resolving Dependencies
+[2018-10-02 07:11:35,154][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:11:35,154][mon2][DEBUG ] ---> Package ceph-release.noarch 0:1-1.el7 will be installed
+[2018-10-02 07:11:36,120][mon2][DEBUG ] --> Finished Dependency Resolution
+[2018-10-02 07:11:36,434][mon2][DEBUG ] 
+[2018-10-02 07:11:36,434][mon2][DEBUG ] Dependencies Resolved
+[2018-10-02 07:11:36,434][mon2][DEBUG ] 
+[2018-10-02 07:11:36,434][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:11:36,435][mon2][DEBUG ]  Package          Arch       Version     Repository                        Size
+[2018-10-02 07:11:36,435][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:11:36,435][mon2][DEBUG ] Installing:
+[2018-10-02 07:11:36,435][mon2][DEBUG ]  ceph-release     noarch     1-1.el7     /ceph-release-1-0.el7.noarch     535  
+[2018-10-02 07:11:36,435][mon2][DEBUG ] 
+[2018-10-02 07:11:36,435][mon2][DEBUG ] Transaction Summary
+[2018-10-02 07:11:36,435][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:11:36,436][mon2][DEBUG ] Install  1 Package
+[2018-10-02 07:11:36,436][mon2][DEBUG ] 
+[2018-10-02 07:11:36,436][mon2][DEBUG ] Total size: 535  
+[2018-10-02 07:11:36,436][mon2][DEBUG ] Installed size: 535  
+[2018-10-02 07:11:36,436][mon2][DEBUG ] Downloading packages:
+[2018-10-02 07:11:36,436][mon2][DEBUG ] Running transaction check
+[2018-10-02 07:11:36,436][mon2][DEBUG ] Running transaction test
+[2018-10-02 07:11:36,437][mon2][DEBUG ] Transaction test succeeded
+[2018-10-02 07:11:36,437][mon2][DEBUG ] Running transaction
+[2018-10-02 07:11:36,550][mon2][DEBUG ]   Installing : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:11:36,551][mon2][DEBUG ] Uploading Package Profile
+[2018-10-02 07:11:37,767][mon2][WARNING] Unable to upload Package Profile
+[2018-10-02 07:11:37,767][mon2][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:11:37,767][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:11:37,767][mon2][DEBUG ]  * epel: mirror.prgmr.com
+[2018-10-02 07:11:37,767][mon2][DEBUG ]  * extras: mirrors.unifiedlayer.com
+[2018-10-02 07:11:37,767][mon2][DEBUG ]  * updates: repos.lax.quadranet.com
+[2018-10-02 07:11:40,286][mon2][DEBUG ] Uploading Tracer Profile
+[2018-10-02 07:11:43,856][mon2][DEBUG ]   Verifying  : ceph-release-1-1.el7.noarch                                  1/1 
+[2018-10-02 07:11:43,856][mon2][WARNING] Unable to upload Tracer Profile
+[2018-10-02 07:11:43,856][mon2][DEBUG ] 
+[2018-10-02 07:11:43,857][mon2][DEBUG ] Installed:
+[2018-10-02 07:11:43,857][mon2][DEBUG ]   ceph-release.noarch 0:1-1.el7                                                 
+[2018-10-02 07:11:43,857][mon2][DEBUG ] 
+[2018-10-02 07:11:43,857][mon2][DEBUG ] Complete!
+[2018-10-02 07:11:43,857][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:11:43,857][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id
+[2018-10-02 07:11:44,071][mon2][WARNING] ensuring that /etc/yum.repos.d/ceph.repo contains a high priority
+[2018-10-02 07:11:44,075][mon2][WARNING] altered ceph.repo priorities to contain: priority=1
+[2018-10-02 07:11:44,077][mon2][INFO  ] Running command: sudo yum -y install ceph ceph-radosgw
+[2018-10-02 07:11:44,498][mon2][DEBUG ] Loaded plugins: enabled_repos_upload, fastestmirror, package_upload, priorities,
+[2018-10-02 07:11:44,498][mon2][DEBUG ]               : product-id, search-disabled-repos, tracer_upload
+[2018-10-02 07:11:44,612][mon2][DEBUG ] Loading mirror speeds from cached hostfile
+[2018-10-02 07:11:44,612][mon2][DEBUG ]  * base: mirrors.unifiedlayer.com
+[2018-10-02 07:11:44,612][mon2][DEBUG ]  * epel: mirror.prgmr.com
+[2018-10-02 07:11:44,612][mon2][DEBUG ]  * extras: mirrors.unifiedlayer.com
+[2018-10-02 07:11:44,613][mon2][DEBUG ]  * updates: repos.lax.quadranet.com
+[2018-10-02 07:11:46,780][mon2][DEBUG ] 8 packages excluded due to repository priority protections
+[2018-10-02 07:11:48,146][mon2][DEBUG ] Resolving Dependencies
+[2018-10-02 07:11:48,147][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:11:48,147][mon2][DEBUG ] ---> Package ceph.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:11:48,147][mon2][DEBUG ] --> Processing Dependency: ceph-mon = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,163][mon2][DEBUG ] --> Processing Dependency: ceph-osd = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,163][mon2][DEBUG ] --> Processing Dependency: ceph-mgr = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,178][mon2][DEBUG ] --> Processing Dependency: ceph-mds = 2:13.2.2-0.el7 for package: 2:ceph-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,179][mon2][DEBUG ] ---> Package ceph-radosgw.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:11:48,210][mon2][DEBUG ] --> Processing Dependency: librados2 = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,210][mon2][DEBUG ] --> Processing Dependency: ceph-selinux = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,210][mon2][DEBUG ] --> Processing Dependency: ceph-common = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,218][mon2][DEBUG ] --> Processing Dependency: librgw2 = 2:13.2.2-0.el7 for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,218][mon2][DEBUG ] --> Processing Dependency: liboath.so.0()(64bit) for package: 2:ceph-radosgw-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,218][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:11:48,218][mon2][DEBUG ] ---> Package ceph-common.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:11:48,218][mon2][DEBUG ] ---> Package ceph-common.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:11:48,250][mon2][DEBUG ] --> Processing Dependency: python-rbd = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,250][mon2][DEBUG ] --> Processing Dependency: librbd1 = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,250][mon2][DEBUG ] --> Processing Dependency: python-rados = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,250][mon2][DEBUG ] --> Processing Dependency: python-cephfs = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,250][mon2][DEBUG ] --> Processing Dependency: python-rgw = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,266][mon2][DEBUG ] --> Processing Dependency: libcephfs2 = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,266][mon2][DEBUG ] --> Processing Dependency: libradosstriper1 = 2:13.2.2-0.el7 for package: 2:ceph-common-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,266][mon2][DEBUG ] ---> Package ceph-mds.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:11:48,266][mon2][DEBUG ] --> Processing Dependency: ceph-base = 2:13.2.2-0.el7 for package: 2:ceph-mds-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,273][mon2][DEBUG ] ---> Package ceph-mgr.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:11:48,289][mon2][DEBUG ] --> Processing Dependency: python-bcrypt for package: 2:ceph-mgr-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,289][mon2][DEBUG ] --> Processing Dependency: python-routes for package: 2:ceph-mgr-13.2.2-0.el7.x86_64
+[2018-10-02 07:11:48,289][mon2][DEBUG ] ---> Package ceph-mon.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:11:48,289][mon2][DEBUG ] ---> Package ceph-osd.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:11:48,293][mon2][DEBUG ] ---> Package ceph-selinux.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:11:48,293][mon2][DEBUG ] ---> Package liboath.x86_64 0:2.4.1-9.el7 will be installed
+[2018-10-02 07:11:48,293][mon2][DEBUG ] ---> Package librados2.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:11:48,309][mon2][DEBUG ] ---> Package librados2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:11:48,309][mon2][DEBUG ] ---> Package librgw2.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:11:48,309][mon2][DEBUG ] ---> Package librgw2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:11:48,309][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:11:48,309][mon2][DEBUG ] ---> Package ceph-base.x86_64 2:13.2.2-0.el7 will be installed
+[2018-10-02 07:11:48,316][mon2][DEBUG ] ---> Package libcephfs2.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:11:48,332][mon2][DEBUG ] ---> Package libcephfs2.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:11:48,332][mon2][DEBUG ] ---> Package libradosstriper1.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:11:48,332][mon2][DEBUG ] ---> Package libradosstriper1.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:11:48,332][mon2][DEBUG ] ---> Package librbd1.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:11:48,332][mon2][DEBUG ] ---> Package librbd1.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:11:48,333][mon2][DEBUG ] ---> Package python-cephfs.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:11:48,333][mon2][DEBUG ] ---> Package python-cephfs.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:11:48,333][mon2][DEBUG ] ---> Package python-rados.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:11:48,333][mon2][DEBUG ] ---> Package python-rados.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:11:48,340][mon2][DEBUG ] ---> Package python-rbd.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:11:48,340][mon2][DEBUG ] ---> Package python-rbd.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:11:48,340][mon2][DEBUG ] ---> Package python-rgw.x86_64 2:12.2.8-0.el7 will be updated
+[2018-10-02 07:11:48,340][mon2][DEBUG ] ---> Package python-rgw.x86_64 2:13.2.2-0.el7 will be an update
+[2018-10-02 07:11:48,340][mon2][DEBUG ] ---> Package python-routes.noarch 0:1.13-2.el7 will be installed
+[2018-10-02 07:11:48,341][mon2][DEBUG ] ---> Package python2-bcrypt.x86_64 0:3.1.4-4.el7 will be installed
+[2018-10-02 07:11:48,341][mon2][DEBUG ] --> Processing Dependency: python2-six for package: python2-bcrypt-3.1.4-4.el7.x86_64
+[2018-10-02 07:11:48,341][mon2][DEBUG ] --> Running transaction check
+[2018-10-02 07:11:48,341][mon2][DEBUG ] ---> Package python2-six.noarch 0:1.9.0-0.el7 will be installed
+[2018-10-02 07:11:49,356][mon2][DEBUG ] --> Finished Dependency Resolution
+[2018-10-02 07:11:49,620][mon2][DEBUG ] 
+[2018-10-02 07:11:49,621][mon2][DEBUG ] Dependencies Resolved
+[2018-10-02 07:11:49,621][mon2][DEBUG ] 
+[2018-10-02 07:11:49,622][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:11:49,622][mon2][DEBUG ]  Package                 Arch          Version                Repository   Size
+[2018-10-02 07:11:49,622][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:11:49,623][mon2][DEBUG ] Installing:
+[2018-10-02 07:11:49,623][mon2][DEBUG ]  ceph                    x86_64        2:13.2.2-0.el7         Ceph        3.0 k
+[2018-10-02 07:11:49,624][mon2][DEBUG ]  ceph-radosgw            x86_64        2:13.2.2-0.el7         Ceph        4.4 M
+[2018-10-02 07:11:49,624][mon2][DEBUG ] Installing for dependencies:
+[2018-10-02 07:11:49,625][mon2][DEBUG ]  ceph-base               x86_64        2:13.2.2-0.el7         Ceph        4.8 M
+[2018-10-02 07:11:49,625][mon2][DEBUG ]  ceph-mds                x86_64        2:13.2.2-0.el7         Ceph        1.7 M
+[2018-10-02 07:11:49,626][mon2][DEBUG ]  ceph-mgr                x86_64        2:13.2.2-0.el7         Ceph        3.4 M
+[2018-10-02 07:11:49,626][mon2][DEBUG ]  ceph-mon                x86_64        2:13.2.2-0.el7         Ceph        4.0 M
+[2018-10-02 07:11:49,627][mon2][DEBUG ]  ceph-osd                x86_64        2:13.2.2-0.el7         Ceph         13 M
+[2018-10-02 07:11:49,627][mon2][DEBUG ]  ceph-selinux            x86_64        2:13.2.2-0.el7         Ceph         20 k
+[2018-10-02 07:11:49,628][mon2][DEBUG ]  liboath                 x86_64        2.4.1-9.el7            epel         35 k
+[2018-10-02 07:11:49,628][mon2][DEBUG ]  python-routes           noarch        1.13-2.el7             epel        640 k
+[2018-10-02 07:11:49,628][mon2][DEBUG ]  python2-bcrypt          x86_64        3.1.4-4.el7            epel         38 k
+[2018-10-02 07:11:49,629][mon2][DEBUG ]  python2-six             noarch        1.9.0-0.el7            epel        2.9 k
+[2018-10-02 07:11:49,629][mon2][DEBUG ] Updating for dependencies:
+[2018-10-02 07:11:49,629][mon2][DEBUG ]  ceph-common             x86_64        2:13.2.2-0.el7         Ceph         14 M
+[2018-10-02 07:11:49,629][mon2][DEBUG ]  libcephfs2              x86_64        2:13.2.2-0.el7         Ceph        433 k
+[2018-10-02 07:11:49,629][mon2][DEBUG ]  librados2               x86_64        2:13.2.2-0.el7         Ceph        2.8 M
+[2018-10-02 07:11:49,630][mon2][DEBUG ]  libradosstriper1        x86_64        2:13.2.2-0.el7         Ceph        328 k
+[2018-10-02 07:11:49,630][mon2][DEBUG ]  librbd1                 x86_64        2:13.2.2-0.el7         Ceph        1.2 M
+[2018-10-02 07:11:49,630][mon2][DEBUG ]  librgw2                 x86_64        2:13.2.2-0.el7         Ceph        2.0 M
+[2018-10-02 07:11:49,630][mon2][DEBUG ]  python-cephfs           x86_64        2:13.2.2-0.el7         Ceph         85 k
+[2018-10-02 07:11:49,630][mon2][DEBUG ]  python-rados            x86_64        2:13.2.2-0.el7         Ceph        189 k
+[2018-10-02 07:11:49,630][mon2][DEBUG ]  python-rbd              x86_64        2:13.2.2-0.el7         Ceph        132 k
+[2018-10-02 07:11:49,631][mon2][DEBUG ]  python-rgw              x86_64        2:13.2.2-0.el7         Ceph         75 k
+[2018-10-02 07:11:49,631][mon2][DEBUG ] 
+[2018-10-02 07:11:49,631][mon2][DEBUG ] Transaction Summary
+[2018-10-02 07:11:49,631][mon2][DEBUG ] ================================================================================
+[2018-10-02 07:11:49,631][mon2][DEBUG ] Install  2 Packages (+10 Dependent packages)
+[2018-10-02 07:11:49,631][mon2][DEBUG ] Upgrade             ( 10 Dependent packages)
+[2018-10-02 07:11:49,631][mon2][DEBUG ] 
+[2018-10-02 07:11:49,632][mon2][DEBUG ] Total download size: 53 M
+[2018-10-02 07:11:49,632][mon2][DEBUG ] Downloading packages:
+[2018-10-02 07:11:49,632][mon2][DEBUG ] Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+[2018-10-02 07:11:55,356][mon2][DEBUG ] --------------------------------------------------------------------------------
+[2018-10-02 07:11:55,356][mon2][DEBUG ] Total                                              9.3 MB/s |  53 MB  00:05     
+[2018-10-02 07:11:55,356][mon2][DEBUG ] Running transaction check
+[2018-10-02 07:11:55,419][mon2][DEBUG ] Running transaction test
+[2018-10-02 07:11:55,786][mon2][DEBUG ] Transaction test succeeded
+[2018-10-02 07:11:55,786][mon2][DEBUG ] Running transaction
+[2018-10-02 07:11:56,602][mon2][DEBUG ]   Updating   : 2:librados2-13.2.2-0.el7.x86_64                             1/32 
+[2018-10-02 07:11:56,966][mon2][DEBUG ]   Installing : liboath-2.4.1-9.el7.x86_64                                  2/32 
+[2018-10-02 07:11:57,180][mon2][DEBUG ]   Updating   : 2:librgw2-13.2.2-0.el7.x86_64                               3/32 
+[2018-10-02 07:11:57,394][mon2][DEBUG ]   Updating   : 2:libcephfs2-13.2.2-0.el7.x86_64                            4/32 
+[2018-10-02 07:11:57,959][mon2][DEBUG ]   Updating   : 2:librbd1-13.2.2-0.el7.x86_64                               5/32 
+[2018-10-02 07:11:58,224][mon2][DEBUG ]   Updating   : 2:python-rados-13.2.2-0.el7.x86_64                          6/32 
+[2018-10-02 07:11:58,239][mon2][DEBUG ]   Updating   : 2:python-rbd-13.2.2-0.el7.x86_64                            7/32 
+[2018-10-02 07:11:58,303][mon2][DEBUG ]   Updating   : 2:python-rgw-13.2.2-0.el7.x86_64                            8/32 
+[2018-10-02 07:11:58,417][mon2][DEBUG ]   Updating   : 2:python-cephfs-13.2.2-0.el7.x86_64                         9/32 
+[2018-10-02 07:12:00,585][mon2][DEBUG ]   Updating   : 2:libradosstriper1-13.2.2-0.el7.x86_64                     10/32 
+[2018-10-02 07:12:02,102][mon2][DEBUG ]   Updating   : 2:ceph-common-13.2.2-0.el7.x86_64                          11/32 
+[2018-10-02 07:12:03,168][mon2][DEBUG ]   Installing : 2:ceph-base-13.2.2-0.el7.x86_64                            12/32 
+[2018-10-02 07:12:26,975][mon2][DEBUG ]   Installing : 2:ceph-selinux-13.2.2-0.el7.x86_64                         13/32 
+[2018-10-02 07:12:26,976][mon2][DEBUG ] /usr/lib/python2.7/site-packages/ceph_disk/main.py:5689: UserWarning: 
+[2018-10-02 07:12:26,976][mon2][DEBUG ] *******************************************************************************
+[2018-10-02 07:12:26,976][mon2][DEBUG ] This tool is now deprecated in favor of ceph-volume.
+[2018-10-02 07:12:26,976][mon2][DEBUG ] It is recommended to use ceph-volume for OSD deployments. For details see:
+[2018-10-02 07:12:26,976][mon2][DEBUG ] 
+[2018-10-02 07:12:26,976][mon2][DEBUG ]     http://docs.ceph.com/docs/master/ceph-volume/#migrating
+[2018-10-02 07:12:26,977][mon2][DEBUG ] 
+[2018-10-02 07:12:26,977][mon2][DEBUG ] *******************************************************************************
+[2018-10-02 07:12:26,977][mon2][DEBUG ] 
+[2018-10-02 07:12:26,977][mon2][DEBUG ]   warnings.warn(DEPRECATION_WARNING)
+[2018-10-02 07:12:26,977][mon2][DEBUG ] /usr/lib/python2.7/site-packages/ceph_disk/main.py:5721: UserWarning: 
+[2018-10-02 07:12:26,977][mon2][DEBUG ] *******************************************************************************
+[2018-10-02 07:12:26,977][mon2][DEBUG ] This tool is now deprecated in favor of ceph-volume.
+[2018-10-02 07:12:26,978][mon2][DEBUG ] It is recommended to use ceph-volume for OSD deployments. For details see:
+[2018-10-02 07:12:26,978][mon2][DEBUG ] 
+[2018-10-02 07:12:26,978][mon2][DEBUG ]     http://docs.ceph.com/docs/master/ceph-volume/#migrating
+[2018-10-02 07:12:26,978][mon2][DEBUG ] 
+[2018-10-02 07:12:26,978][mon2][DEBUG ] *******************************************************************************
+[2018-10-02 07:12:26,978][mon2][DEBUG ] 
+[2018-10-02 07:12:26,979][mon2][DEBUG ]   warnings.warn(DEPRECATION_WARNING)
+[2018-10-02 07:12:28,746][mon2][DEBUG ]   Installing : 2:ceph-mon-13.2.2-0.el7.x86_64                             14/32 
+[2018-10-02 07:12:31,765][mon2][DEBUG ]   Installing : 2:ceph-mds-13.2.2-0.el7.x86_64                             15/32 
+[2018-10-02 07:12:32,129][mon2][DEBUG ]   Installing : 2:ceph-osd-13.2.2-0.el7.x86_64                             16/32 
+[2018-10-02 07:12:33,045][mon2][DEBUG ]   Installing : python-routes-1.13-2.el7.noarch                            17/32 
+[2018-10-02 07:12:33,077][mon2][DEBUG ]   Installing : python2-six-1.9.0-0.el7.noarch                             18/32 
+[2018-10-02 07:12:33,992][mon2][DEBUG ]   Installing : python2-bcrypt-3.1.4-4.el7.x86_64                          19/32 
+[2018-10-02 07:12:34,707][mon2][DEBUG ]   Installing : 2:ceph-mgr-13.2.2-0.el7.x86_64                             20/32 
+[2018-10-02 07:12:35,423][mon2][DEBUG ]   Installing : 2:ceph-13.2.2-0.el7.x86_64                                 21/32 
+[2018-10-02 07:12:35,987][mon2][DEBUG ]   Installing : 2:ceph-radosgw-13.2.2-0.el7.x86_64                         22/32 
+[2018-10-02 07:12:36,302][mon2][DEBUG ]   Cleanup    : 2:ceph-common-12.2.8-0.el7.x86_64                          23/32 
+[2018-10-02 07:12:36,566][mon2][DEBUG ]   Cleanup    : 2:python-rbd-12.2.8-0.el7.x86_64                           24/32 
+[2018-10-02 07:12:36,730][mon2][DEBUG ]   Cleanup    : 2:python-rgw-12.2.8-0.el7.x86_64                           25/32 
+[2018-10-02 07:12:36,762][mon2][DEBUG ]   Cleanup    : 2:librgw2-12.2.8-0.el7.x86_64                              26/32 
+[2018-10-02 07:12:36,794][mon2][DEBUG ]   Cleanup    : 2:python-rados-12.2.8-0.el7.x86_64                         27/32 
+[2018-10-02 07:12:36,907][mon2][DEBUG ]   Cleanup    : 2:librbd1-12.2.8-0.el7.x86_64                              28/32 
+[2018-10-02 07:12:36,911][mon2][DEBUG ]   Cleanup    : 2:libradosstriper1-12.2.8-0.el7.x86_64                     29/32 
+[2018-10-02 07:12:36,975][mon2][DEBUG ]   Cleanup    : 2:python-cephfs-12.2.8-0.el7.x86_64                        30/32 
+[2018-10-02 07:12:37,039][mon2][DEBUG ]   Cleanup    : 2:libcephfs2-12.2.8-0.el7.x86_64                           31/32 
+[2018-10-02 07:12:37,102][mon2][DEBUG ]   Cleanup    : 2:librados2-12.2.8-0.el7.x86_64                            32/32 
+[2018-10-02 07:12:37,103][mon2][DEBUG ] Uploading Package Profile
+[2018-10-02 07:12:38,469][mon2][WARNING] Unable to upload Package Profile
+[2018-10-02 07:12:39,785][mon2][DEBUG ] Uploading Tracer Profile
+[2018-10-02 07:12:46,412][mon2][DEBUG ]   Verifying  : 2:libradosstriper1-13.2.2-0.el7.x86_64                      1/32 
+[2018-10-02 07:12:46,412][mon2][WARNING] Unable to upload Tracer Profile
+[2018-10-02 07:12:46,412][mon2][DEBUG ]   Verifying  : 2:python-rbd-13.2.2-0.el7.x86_64                            2/32 
+[2018-10-02 07:12:46,416][mon2][DEBUG ]   Verifying  : 2:libcephfs2-13.2.2-0.el7.x86_64                            3/32 
+[2018-10-02 07:12:46,431][mon2][DEBUG ]   Verifying  : 2:ceph-radosgw-13.2.2-0.el7.x86_64                          4/32 
+[2018-10-02 07:12:46,463][mon2][DEBUG ]   Verifying  : 2:librbd1-13.2.2-0.el7.x86_64                               5/32 
+[2018-10-02 07:12:46,463][mon2][DEBUG ]   Verifying  : 2:ceph-mon-13.2.2-0.el7.x86_64                              6/32 
+[2018-10-02 07:12:46,495][mon2][DEBUG ]   Verifying  : python2-six-1.9.0-0.el7.noarch                              7/32 
+[2018-10-02 07:12:46,498][mon2][DEBUG ]   Verifying  : 2:librgw2-13.2.2-0.el7.x86_64                               8/32 
+[2018-10-02 07:12:46,530][mon2][DEBUG ]   Verifying  : 2:ceph-mds-13.2.2-0.el7.x86_64                              9/32 
+[2018-10-02 07:12:46,530][mon2][DEBUG ]   Verifying  : python-routes-1.13-2.el7.noarch                            10/32 
+[2018-10-02 07:12:46,546][mon2][DEBUG ]   Verifying  : 2:ceph-selinux-13.2.2-0.el7.x86_64                         11/32 
+[2018-10-02 07:12:46,561][mon2][DEBUG ]   Verifying  : python2-bcrypt-3.1.4-4.el7.x86_64                          12/32 
+[2018-10-02 07:12:46,577][mon2][DEBUG ]   Verifying  : 2:python-cephfs-13.2.2-0.el7.x86_64                        13/32 
+[2018-10-02 07:12:46,592][mon2][DEBUG ]   Verifying  : 2:python-rados-13.2.2-0.el7.x86_64                         14/32 
+[2018-10-02 07:12:46,608][mon2][DEBUG ]   Verifying  : 2:ceph-osd-13.2.2-0.el7.x86_64                             15/32 
+[2018-10-02 07:12:46,623][mon2][DEBUG ]   Verifying  : 2:ceph-base-13.2.2-0.el7.x86_64                            16/32 
+[2018-10-02 07:12:46,639][mon2][DEBUG ]   Verifying  : liboath-2.4.1-9.el7.x86_64                                 17/32 
+[2018-10-02 07:12:46,655][mon2][DEBUG ]   Verifying  : 2:ceph-common-13.2.2-0.el7.x86_64                          18/32 
+[2018-10-02 07:12:46,662][mon2][DEBUG ]   Verifying  : 2:ceph-13.2.2-0.el7.x86_64                                 19/32 
+[2018-10-02 07:12:46,677][mon2][DEBUG ]   Verifying  : 2:librados2-13.2.2-0.el7.x86_64                            20/32 
+[2018-10-02 07:12:46,693][mon2][DEBUG ]   Verifying  : 2:python-rgw-13.2.2-0.el7.x86_64                           21/32 
+[2018-10-02 07:12:46,724][mon2][DEBUG ]   Verifying  : 2:ceph-mgr-13.2.2-0.el7.x86_64                             22/32 
+[2018-10-02 07:12:46,725][mon2][DEBUG ]   Verifying  : 2:libcephfs2-12.2.8-0.el7.x86_64                           23/32 
+[2018-10-02 07:12:46,725][mon2][DEBUG ]   Verifying  : 2:python-rados-12.2.8-0.el7.x86_64                         24/32 
+[2018-10-02 07:12:46,725][mon2][DEBUG ]   Verifying  : 2:librbd1-12.2.8-0.el7.x86_64                              25/32 
+[2018-10-02 07:12:46,725][mon2][DEBUG ]   Verifying  : 2:librados2-12.2.8-0.el7.x86_64                            26/32 
+[2018-10-02 07:12:46,725][mon2][DEBUG ]   Verifying  : 2:python-cephfs-12.2.8-0.el7.x86_64                        27/32 
+[2018-10-02 07:12:46,725][mon2][DEBUG ]   Verifying  : 2:python-rgw-12.2.8-0.el7.x86_64                           28/32 
+[2018-10-02 07:12:46,725][mon2][DEBUG ]   Verifying  : 2:python-rbd-12.2.8-0.el7.x86_64                           29/32 
+[2018-10-02 07:12:46,726][mon2][DEBUG ]   Verifying  : 2:librgw2-12.2.8-0.el7.x86_64                              30/32 
+[2018-10-02 07:12:46,726][mon2][DEBUG ]   Verifying  : 2:libradosstriper1-12.2.8-0.el7.x86_64                     31/32 
+[2018-10-02 07:12:46,789][mon2][DEBUG ]   Verifying  : 2:ceph-common-12.2.8-0.el7.x86_64                          32/32 
+[2018-10-02 07:12:46,790][mon2][DEBUG ] 
+[2018-10-02 07:12:46,790][mon2][DEBUG ] Installed:
+[2018-10-02 07:12:46,790][mon2][DEBUG ]   ceph.x86_64 2:13.2.2-0.el7         ceph-radosgw.x86_64 2:13.2.2-0.el7        
+[2018-10-02 07:12:46,790][mon2][DEBUG ] 
+[2018-10-02 07:12:46,790][mon2][DEBUG ] Dependency Installed:
+[2018-10-02 07:12:46,790][mon2][DEBUG ]   ceph-base.x86_64 2:13.2.2-0.el7         ceph-mds.x86_64 2:13.2.2-0.el7        
+[2018-10-02 07:12:46,791][mon2][DEBUG ]   ceph-mgr.x86_64 2:13.2.2-0.el7          ceph-mon.x86_64 2:13.2.2-0.el7        
+[2018-10-02 07:12:46,791][mon2][DEBUG ]   ceph-osd.x86_64 2:13.2.2-0.el7          ceph-selinux.x86_64 2:13.2.2-0.el7    
+[2018-10-02 07:12:46,791][mon2][DEBUG ]   liboath.x86_64 0:2.4.1-9.el7            python-routes.noarch 0:1.13-2.el7     
+[2018-10-02 07:12:46,791][mon2][DEBUG ]   python2-bcrypt.x86_64 0:3.1.4-4.el7     python2-six.noarch 0:1.9.0-0.el7      
+[2018-10-02 07:12:46,791][mon2][DEBUG ] 
+[2018-10-02 07:12:46,791][mon2][DEBUG ] Dependency Updated:
+[2018-10-02 07:12:46,791][mon2][DEBUG ]   ceph-common.x86_64 2:13.2.2-0.el7     libcephfs2.x86_64 2:13.2.2-0.el7        
+[2018-10-02 07:12:46,792][mon2][DEBUG ]   librados2.x86_64 2:13.2.2-0.el7       libradosstriper1.x86_64 2:13.2.2-0.el7  
+[2018-10-02 07:12:46,792][mon2][DEBUG ]   librbd1.x86_64 2:13.2.2-0.el7         librgw2.x86_64 2:13.2.2-0.el7           
+[2018-10-02 07:12:46,792][mon2][DEBUG ]   python-cephfs.x86_64 2:13.2.2-0.el7   python-rados.x86_64 2:13.2.2-0.el7      
+[2018-10-02 07:12:46,792][mon2][DEBUG ]   python-rbd.x86_64 2:13.2.2-0.el7      python-rgw.x86_64 2:13.2.2-0.el7        
+[2018-10-02 07:12:46,792][mon2][DEBUG ] 
+[2018-10-02 07:12:46,792][mon2][DEBUG ] Complete!
+[2018-10-02 07:12:46,808][mon2][DEBUG ] Uploading Enabled Repositories Report
+[2018-10-02 07:12:46,872][mon2][DEBUG ] Loaded plugins: fastestmirror, priorities, product-id
+[2018-10-02 07:12:47,189][mon2][INFO  ] Running command: sudo ceph --version
+[2018-10-02 07:12:47,359][mon2][DEBUG ] ceph version 13.2.2 (02899bfda814146b021136e9d8e80eba494e1126) mimic (stable)

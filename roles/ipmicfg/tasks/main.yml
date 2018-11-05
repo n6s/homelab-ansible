@@ -1,0 +1,10 @@
+---
+# tasks file for ipmicfg
+- name: Copy ipmicfg to server
+  copy:
+    dest: /usr/local/sbin/ipmicfg
+    group: root
+    mode: 0750
+    owner: root
+    src: ipmicfg
+

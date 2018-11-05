@@ -3,12 +3,14 @@
   shell: rpm -qa | grep katello-ca-consumer ; exit 0
   register: rpm
   changed_when: no
+  tags: deploy
 
 - name: Uninstall prior rpm
   yum:
     name: "{{ rpm.stdout }}"
     state: absent
   when: rpm is defined
+  tags: deploy
 
 - name: (Re)enable default repos
   command: "yum-config-manager --enable {{ item }}" 
@@ -17,28 +19,43 @@
   - epel
   - extras
   - updates
+  tags:
+  - deploy
+  - reset
 
 - name: Install katello consumer rpm
   yum:
     name: '{{ katello_remote_rpm }}'
     state: present
+  tags: deploy
 
 - name: Disable existing redhat repos
   command: subscription-manager remove --all
   ignore_errors: yes
+  tags:
+  - deploy
+  - reset
 
 - name: Unregister existing subscriptions
   command: subscription-manager unregister
   ignore_errors: yes
+  tags:
+  - deploy
+  - reset
 
 - name: Clean subscription manager
   command: subscription-manager clean
+  tags:
+  - deploy
+  - reset
 
 - name: Subscribe with activation key
   redhat_subscription:
     activationkey: '{{ activation_key }}'
     org_id: '{{ org_id }}'
     state: present
+  tags:
+  - deploy
 
 - name: Install katello-agent
   yum:
@@ -46,6 +63,8 @@
     state: present
   notify:
   - Stop and disable goferd
+  tags:
+  - deploy
 
 - name: Disable repos replaced by katello
   command: "yum-config-manager --disable {{ item }}" 
@@ -54,4 +73,6 @@
   - epel
   - extras
   - updates
+  tags:
+  - deploy
 
