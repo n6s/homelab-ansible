@@ -1,0 +1,16 @@
+---
+# tasks file for ansible_tower_deploy
+- name: Download and extract ansible tower from tarball
+  unarchive:
+    #src: https://releases.ansible.com/ansible-tower/setup/ansible-tower-setup-latest.tar.gz
+    src: https://releases.ansible.com/ansible-tower/setup/{{ ansible_tower_version }}.tar.gz
+    dest: /root/
+    remote_src: yes
+
+- name: Upload our modified version of the ansible inventory
+  copy:
+    src: inventory
+    dest: /root/{{ ansible_tower_version }}/inventory
+
+- debug: msg="Next, run /root/{{ ansible_tower_version }}/setup.sh"
+

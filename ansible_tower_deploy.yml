@@ -1,0 +1,10 @@
+---
+- name: Deploy ansible tower
+  hosts: awx
+  become: yes
+  gather_facts: yes
+  roles:
+  - ansible_tower_deploy
+  vars:
+    ansible_tower_version: ansible-tower-setup-3.3.1-1
+
