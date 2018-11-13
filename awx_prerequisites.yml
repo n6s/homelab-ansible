@@ -1,0 +1,11 @@
+---
+- name: Prepare host with prerequisites for AWX
+  hosts: towerhost
+  become: yes
+  gather_facts: yes
+  roles:
+  - awx_prerequisites
+  vars:
+    ansible_user: root
+
+

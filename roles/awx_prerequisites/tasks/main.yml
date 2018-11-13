@@ -1,0 +1,76 @@
+---
+# tasks file for awx_prerequisites
+- name: upgrade all packages
+  yum:
+    name: '*'
+    state: latest
+
+- name: Install epel-release
+  yum:
+    name: epel-release
+    state: latest
+
+- name: Install yum packages
+  yum:
+    name: "{{ item }}"
+    state: latest
+  loop:
+  #- "@Development Tools"
+  - ansible
+  - device-mapper-persistent-data
+  - gcc-c++
+  - git-all
+  - lvm2
+  - make
+  - python-pip
+  - wget
+  - yum-utils
+
+- name: Setup the stable docker repository
+  command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  args:
+    creates: /etc/yum.repos.d/docker-ce.repo
+
+- name: Install docker-ce
+  yum:
+    name: docker-ce
+    state: latest
+
+- name: Start and enable the docker system service
+  service:
+    name: docker
+    enabled: yes
+    state: started
+
+- name:  Install docker-compose and dependency docker-py python package with pip
+  pip:
+    name: docker-compose
+
+- name: Download nodejs installer
+  get_url:
+    url: https://rpm.nodesource.com/setup_8.x
+    dest: /tmp/nodejs-setup_8.x
+    mode: 0744
+
+- name: Run the nodejs/npm repo installer
+  command: /tmp/nodejs-setup_8.x
+  register: result
+  args:
+    creates: /etc/yum.repos.d/nodesource-el7.repo
+
+- name: Show nodejs/npm repo installer result
+  debug:
+    msg: "{{ result }}"
+  when: result is skipped
+
+- name: Install nodejs/npm
+  yum:
+    name: nodejs
+    state: latest
+
+- name: Download bash completion for Docker Compose
+  get_url:
+    url: https://raw.githubusercontent.com/docker/compose/1.23.1/contrib/completion/bash/docker-compose
+    dest: /etc/bash_completion.d/docker-compose
+    mode: 0644
+
