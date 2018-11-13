@@ -18,7 +18,7 @@
   copy:
     dest: /home/roger/.vimrc
     force: no
-    src: /home/roger/.vimrc
+    src: vimrc
     owner: roger
     group: roger
 
@@ -26,7 +26,7 @@
   copy:
     dest: /root/.vimrc
     force: no
-    src: /home/roger/.vimrc
+    src: vimrc
 
 - name: Copy a new sudoers file into place, after passing validation with visudo
   copy:
