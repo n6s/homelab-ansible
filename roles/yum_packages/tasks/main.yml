@@ -3,13 +3,14 @@
   yum: name=epel-release state=latest
 
 - name: install packages
-  yum: name={{item}} state=latest
-  with_items:
-  - htop
-  - lshw
-  - setroubleshoot-server
-  - tree
-  - vim-enhanced
-  - wget
-  - yum-utils 
+  yum:
+    name:
+    - htop
+    - lshw
+    - setroubleshoot-server
+    - tree
+    - vim-enhanced
+    - wget
+    - yum-utils 
+    state: latest
 
