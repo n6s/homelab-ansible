@@ -1,6 +1,6 @@
 ---
 - name: Disable root password login
-  hosts: desktop
+  hosts: all
   become: yes
   gather_facts: yes
   roles:
