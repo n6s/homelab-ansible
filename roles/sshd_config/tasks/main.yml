@@ -1,0 +1,8 @@
+---
+# tasks file for sshd_config
+- name: Disable root password authentication
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PermitRootLogin'
+    line: 'PermitRootLogin without-password'
+

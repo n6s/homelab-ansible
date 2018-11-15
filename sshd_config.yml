@@ -1,0 +1,8 @@
+---
+- name: Disable root password login
+  hosts: desktop
+  become: yes
+  gather_facts: yes
+  roles:
+  - sshd_config
+
