@@ -7,7 +7,6 @@
 #- hosts: os_CentOS
 #  gather_facts: no
   become: yes
-  serial: 1
   roles:
   - katello-host-setup
 
