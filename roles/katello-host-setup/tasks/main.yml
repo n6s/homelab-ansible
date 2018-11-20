@@ -16,7 +16,6 @@
   command: "yum-config-manager --enable {{ item }}" 
   with_items:
   - base
-  - epel
   - extras
   - updates
   tags:
@@ -70,7 +69,6 @@
   command: "yum-config-manager --disable {{ item }}" 
   with_items:
   - base
-  - epel
   - extras
   - updates
   tags:
