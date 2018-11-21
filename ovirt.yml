@@ -1,0 +1,57 @@
+---
+- name: Deploy ovirt self-hosted engine
+  hosts: ovirt
+  become: yes
+  gather_facts: yes
+  tasks:
+  - name: Disable epel repo to avoid version errors
+    command: yum-config-manager --disable epel
+
+  - name: Install the ovirt repo
+    yum:
+      name: http://resources.ovirt.org/pub/yum-repo/ovirt-release42.rpm
+      state: installed
+
+  - name: Ensure packages are up to date
+    yum:
+      name: '*'
+      state: latest
+
+  - name: Reboot if any kernel related packages have been updated
+    command: needs-restarting -r
+
+  - name: Install the dashboard package
+    yum:
+      name:
+      - cockpit-ovirt-dashboard
+      - vdsm-gluster
+      state: present
+
+  - name: Enable and start the cockpit.socket service
+    service:
+      name: cockpit.socket
+      enabled: yes
+      state: started
+
+  - name: Configure firewall to allow cockpit
+    firewalld:
+      service: cockpit
+      permanent: true
+      state: enabled
+      immediate: true
+
+- name: Install ovirt-engine on first host only
+  hosts: enc1b
+  become: yes
+  tasks:
+  - name: Install gdeploy and ovirt-engine
+    yum:
+      name:
+      - ovirt-engine-appliance
+      - gdeploy
+      state: installed
+
+  - name: Done
+    debug:
+      msg: "Next, log into GUI and run wizard."
+
