@@ -5,8 +5,7 @@
 #  - group_by: key=os_{{ ansible_distribution }}
 #
 #- hosts: os_CentOS
-#  gather_facts: no
+  gather_facts: no
   become: yes
   roles:
   - katello-host-setup
-
