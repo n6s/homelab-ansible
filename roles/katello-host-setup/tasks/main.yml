@@ -1,16 +1,16 @@
 ---
-#- name: Query prior rpm if any
-#  shell: rpm -qa | grep katello-ca-consumer ; exit 0
-#  register: rpm
-#  changed_when: no
-#  tags: deploy
-#
-#- name: Uninstall prior rpm
-#  yum:
-#    name: "{{ rpm.stdout }}"
-#    state: absent
-#  when: rpm is defined
-#  tags: deploy
+- name: Query prior rpm if any
+  shell: rpm -qa | grep katello-ca-consumer ; exit 0
+  register: rpm
+  changed_when: no
+  tags: reset
+
+- name: Uninstall prior rpm
+  yum:
+    name: "{{ rpm.stdout }}"
+    state: absent
+  when: rpm is defined
+  tags: reset
 
 - name: Install yum-utils
   yum:
@@ -29,11 +29,11 @@
   tags:
   - reset
 
-#- name: Install katello consumer rpm
-#  yum:
-#    name: '{{ katello_remote_rpm }}'
-#    state: present
-#  tags: deploy
+- name: Install katello consumer rpm
+  yum:
+    name: '{{ katello_remote_rpm }}'
+    state: present
+  tags: deploy
 
 - name: Disable existing redhat repos
   command: subscription-manager remove --all
