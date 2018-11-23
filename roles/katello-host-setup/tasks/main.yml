@@ -1,6 +1,8 @@
 ---
 - name: Query prior rpm if any
   shell: rpm -qa | grep katello-ca-consumer ; exit 0
+  args:
+    warn: false
   register: rpm
   changed_when: no
   tags: reset
@@ -12,14 +14,6 @@
   when: rpm is defined
   tags: reset
 
-- name: Install yum-utils
-  yum:
-    name: yum-utils
-    state: present
-  tags:
-  - deploy
-  - reset
-
 - name: Reenable default repos
   command: "yum-config-manager --enable {{ item }}" 
   with_items:
@@ -28,6 +22,21 @@
   - updates
   tags:
   - reset
+
+- name: Install yum-utils
+  yum:
+    name: yum-utils
+    state: present
+  tags:
+  - deploy
+  - reset
+
+- name: Install subscription-manager
+  yum:
+    name: subscription-manager
+    state: present
+  tags:
+  - deploy
 
 - name: Install katello consumer rpm
   yum:
@@ -54,7 +63,9 @@
   - reset
 
 - name: Clean yum cache
-  command: yum clean all
+  command: yum clean all 
+  args:
+    warn: false
   tags:
   - reset
 
@@ -64,7 +75,7 @@
     org_id: '{{ org_id }}'
     state: present
   tags:
-  - reset
+  - deploy
 
 - name: Disable repos replaced by katello
   command: "yum-config-manager --disable {{ item }}" 
@@ -81,4 +92,10 @@
     state: present
   tags:
   - deploy
+
+- name: Uninstall subscription-manager
+  yum:
+    name: subscription-manager
+    state: absent
+  tags: reset
 
