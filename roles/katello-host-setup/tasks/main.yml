@@ -33,6 +33,7 @@
   yum:
     name: '{{ katello_remote_rpm }}'
     state: present
+    validate_certs: no
   tags: deploy
 
 - name: Disable existing redhat repos
