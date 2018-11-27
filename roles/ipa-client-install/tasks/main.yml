@@ -2,7 +2,7 @@
 # tasks file for ipa-client-install
 - name: Install ipa-client
   yum:
-    name: ipa-client-install
+    name: ipa-client
     state: present
 
 - name: Configure IPA client and add DNS record to IPA server
