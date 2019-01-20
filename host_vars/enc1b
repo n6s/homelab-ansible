@@ -1,5 +1,0 @@
-net_driver: igb
-sriov_devices:
-- enp1s0f0
-sriov_numvfs: 7
-
